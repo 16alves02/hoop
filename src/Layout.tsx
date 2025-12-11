@@ -1,17 +1,19 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-const navigate = useNavigate()
-
-const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault()
-  const termo = (e.currentTarget.elements.namedItem("termo") as HTMLInputElement).value
-
-  if (termo.trim() !== "") {
-    navigate("/pesquisa/${termo}")
-  }
-}
-
 function Layout() {
+
+  const navigate = useNavigate()
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+
+    e.preventDefault()
+
+    const termo = (e.currentTarget.elements.namedItem("termo") as HTMLInputElement).value
+
+    if (termo.trim() !== "") {
+      navigate("/pesquisa/${termo}")
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
