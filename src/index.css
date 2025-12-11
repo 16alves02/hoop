@@ -541,3 +541,36 @@ body {
   color: white;
   margin-left: 20px;
 }
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.category-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

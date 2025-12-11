@@ -74,9 +74,9 @@ function Layout() {
             <div className="footer-column">
               <h4>SEGUIR</h4>
               <div className="social-icons">
-                <div className="social-icon">F</div>
-                <div className="social-icon">I</div>
-                <div className="social-icon">T</div>
+                <div className="fa-facebook"></div>
+                <div className="fa-instagram">I</div>
+                <div className="fa-twitter">T</div>
               </div>
             </div>
           </div>
