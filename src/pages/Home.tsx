@@ -1,31 +1,47 @@
 function Home() {
   return (
-    <div className="text-center py-20">
-      <h1 className="text-6xl font-bold mb-6 text-gold">HOOP STORE</h1>
-      <p className="text-3xl mb-10">Camisolas autênticas NBA • Mitchell & Ness Classics</p>
-      
-      {/* Jordan grande no centro */}
-      <div className="mb-20">
-        <img 
-          src="/img/jordan-front.png" 
-          alt="Michael Jordan 23" 
-          className="mx-auto" 
-          style={{maxWidth: "600px", width: "100%"}} 
-        />
+    <div className="hero" style={{backgroundImage: 'url(/img/kobe-background.jpg)'}}>
+      <div className="hero-overlay">
+        <div className="container">
+          <h1 className="text-6xl font-bold text-white mb-10">HOOP STORE</h1>
+          <p className="text-2xl text-white mb-10">
+            A tua loja de produtos de basquetebol. Camisolas autênticas NBA, acessórios, bolas e mais. Garante qualidade para o teu jogo ou coleção.
+          </p>
+          <a href="/produtos" className="btn-primary"><i className="fas fa-basketball-ball"></i> Ver Produtos</a>
+        </div>
       </div>
 
-      <p className="text-2xl mb-10">Legends Never Die</p>
-      
-      <a href="/produtos" className="btn-primary">
-        VER TODOS OS PRODUTOS
-      </a>
-
-      <div className="mt-20">
-        <p className="text-xl">
-          Descobre as camisolas mais icónicas da história da NBA.<br />
-          Jordan, Kobe, Iverson, Bird, Curry e muitas mais.
-        </p>
-      </div>
+      <section className="categories">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-center mb-10">Encontra Tudo o que Precisas</h2>
+          <div className="category-grid">
+            <a href="/bolas" className="category-item">
+              <img src="/img/bola-example.jpg" alt="Bolas" />
+              <p>Bolas de Basquetebol</p>
+            </a>
+            <a href="/tabelas" className="category-item">
+              <img src="/img/tabela-example.jpg" alt="Tabelas" />
+              <p>Tabelas de Basquetebol</p>
+            </a>
+            <a href="/equipamento" className="category-item">
+              <img src="/img/equipamento-example.jpg" alt="Equipamento" />
+              <p>Equipamento de Basquetebol</p>
+            </a>
+            <a href="/calcado" className="category-item">
+              <img src="/img/tenis-example.jpg" alt="Calçado" />
+              <p>Calçado de Basquetebol</p>
+            </a>
+            <a href="/acessorios" className="category-item">
+              <img src="/img/acessorios-example.jpg" alt="Acessórios" />
+              <p>Acessórios de Basquetebol</p>
+            </a>
+            <a href="/nba" className="category-item">
+              <img src="/img/nba-example.jpg" alt="NBA" />
+              <p>NBA</p>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -11,13 +11,13 @@ type ProductCardProps = {
 
 function ProductCard({ id, nome, jogador, equipa, preco, imagem }: ProductCardProps) {
   return (
-    <Link to={`/produto/${id}`}>
+    <Link to={`/produto/${id}`} className="card-link">
       <div className="card">
         <img src={imagem} alt={nome} className="card-img" />
         <div className="card-body">
           <h3 className="card-title">{jogador}</h3>
           <p className="card-text">{equipa}</p>
-          <p className="card-price">€{preco}</p>
+          <p className="card-price">€{preco.toFixed(2)}</p>
         </div>
       </div>
     </Link>

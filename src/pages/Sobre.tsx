@@ -1,24 +1,20 @@
 function Sobre() {
   return (
     <div className="mt-20 mb-20">
-      <h1 className="text-4xl font-bold text-center mb-20">SOBRE A HOOP STORE</h1>
+      <h1 className="text-4xl font-bold text-center mb-20">A HOOP STORE</h1>
 
-      <div className="max-w-3xl mx-auto text-left">
+      <div className="max-w-4xl mx-auto text-left">
         <p className="text-xl mb-10">
-          A HOOP Store é uma loja online dedicada às camisolas mais icónicas da história da NBA, inspirada na Mitchell & Ness. 
-          Aqui podes encontrar peças lendárias de jogadores como Jordan, Kobe e Curry.
+          A HOOP Store é a tua loja online dedicada às camisolas mais lendárias da história da NBA. Inspirada na Mitchell & Ness, trazemos peças autênticas e edições limitadas de jogadores como Michael Jordan, Kobe Bryant, Allen Iverson, Larry Bird e Stephen Curry.
         </p>
-
-        <h2 className="text-3xl font-bold mb-5">Projeto Académico</h2>
-        <p className="text-lg mb-10">
-          Este site foi desenvolvido como projeto para a unidade curricular Tecnologias Web, no CTeSP em Desenvolvimento de Software. 
-          Utiliza React.JS com componentes funcionais, props, hooks como useState e useEffect, React Router e dados de um ficheiro JSON local.
+        <p className="text-xl mb-10">
+          Cada camisola é uma peça de história – costurada com qualidade premium, detalhes fiéis aos originais e pronta para fazer parte da tua coleção ou do teu dia a dia.
         </p>
-
-        <p className="text-lg">
-          Realizado por: <strong>Leonardo Alves</strong><br />
-          Professor: Carlos Guerra<br />
-          Ano: 2025
+        <p className="text-xl mb-10">
+          Na HOOP Store acreditamos que as lendas nunca morrem. Veste o legado.
+        </p>
+        <p className="text-3xl font-bold text-gold text-center mt-20">
+          Legends Never Die
         </p>
       </div>
     </div>
