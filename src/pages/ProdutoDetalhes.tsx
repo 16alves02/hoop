@@ -38,7 +38,7 @@ function ProdutoDetalhes() {
         <div className="text-left">
           <h2 className="text-3xl font-bold mb-5">{produto.jogador}</h2>
           <p className="text-xl mb-5">{produto.equipa}</p>
-          <p className="text-4xl font-bold mb-10">€{produto.preco}</p>
+          <p className="text-4xl font-bold mb-10">{new Intl.NumberFormat("pt-PT", { style: "currency", currency: "EUR" }).format(produto.preco)}</p>
           <p className="mb-10">{produto.descricao}</p>
           <button className="btn-primary">Adicionar ao Carrinho</button>
         </div>

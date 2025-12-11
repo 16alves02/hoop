@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <div className="hero" style={{backgroundImage: 'url(/img/kobe-background.jpg)'}}>
+    <div className="hero" style={{backgroundImage: "url(/img/kobe-background.jpg)"}}>
       <div className="hero-overlay">
         <div className="container">
           <h1 className="text-6xl font-bold text-white mb-10">HOOP STORE</h1>

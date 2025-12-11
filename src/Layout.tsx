@@ -1,4 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+
+const navigate = useNavigate()
+
+const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  const termo = (e.currentTarget.elements.namedItem("termo") as HTMLInputElement).value
+
+  if (termo.trim() !== "") {
+    navigate("/pesquisa/${termo}")
+  }
+}
 
 function Layout() {
   return (
@@ -30,7 +41,7 @@ function Layout() {
           </ul>
 
           {/* Input de pesquisa */}
-          <form action="/pesquisa" className="search-form">
+          <form onSubmit={handleSearch} className="search-form">
             <input 
               type="text" 
               name="termo" 
@@ -74,9 +85,15 @@ function Layout() {
             <div className="footer-column">
               <h4>SEGUIR</h4>
               <div className="social-icons">
-                <div className="fa-facebook"></div>
-                <div className="fa-instagram">I</div>
-                <div className="fa-twitter">T</div>
+                <a href="#" target="_blank" className="social-icon">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" className="social-icon">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" className="social-icon">
+                  <i className="fab fa-twitter"></i>
+                </a>
               </div>
             </div>
           </div>
