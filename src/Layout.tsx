@@ -22,10 +22,6 @@ function Layout() {
           <Link to="/">
             <img src="/img/Logo-HOOP2-transparente.png" alt="HOOP Store" className="logo h-24" />
           </Link>
-          <div className="search-form flex items-center">
-            <input type="text" placeholder="Pesquisar..." className="search-input" />
-            <button className="search-btn"><i className="fas fa-search"></i></button>
-          </div>
           <Link to="/carrinho" className="cart-icon">
             <i className="fas fa-shopping-cart text-2xl"></i>
           </Link>
@@ -40,19 +36,20 @@ function Layout() {
             <li><Link to="/produtos" className="nav-link">Produtos</Link></li>
             <li><Link to="/contacto" className="nav-link">Contacto</Link></li>
             <li><Link to="/sobre" className="nav-link">Sobre</Link></li>
-          </ul>
-
-          {/* Input de pesquisa */}
-          <form onSubmit={handleSearch} className="search-form">
-            <input 
-              type="text" 
-              name="termo" 
-              placeholder="Pesquisar jogador ou equipa..." 
-              className="search-input"
-              required 
-            />
-            <button type="submit" className="search-btn">🔍</button>
-          </form>
+            <li>
+              <form onSubmit={handleSearch} className="search-form">
+                <input 
+                  type="text" 
+                  name="termo" 
+                  placeholder="Pesquisar jogador ou equipa..." 
+                  className="search-input"
+                  required 
+                />
+                <button type="submit" className="search-btn">🔍</button>
+              </form>
+              {/* Input de pesquisa */}
+            </li>
+          </ul>     
         </div>
       </nav>
 
