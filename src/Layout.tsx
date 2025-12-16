@@ -10,7 +10,7 @@ function Layout() {
     const termo = (e.currentTarget.elements.namedItem("termo") as HTMLInputElement).value
 
     if (termo.trim() !== "") {
-      navigate("/pesquisa/${termo}")
+      navigate(`/pesquisa/${termo}`)
     }
   }
 
