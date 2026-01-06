@@ -2,21 +2,24 @@ import "../styles/GuiaDeTamanhos.css"
 
 function GuiaDeTamanhos() {
   return (
+    // Aqui reúno todas as tabelas necessárias para ajudar o utilizador a escolher o tamanho certo
     <section className="tamanhos-page">
       <h1 className="tamanhos-titulo">Guia de Tamanhos</h1>
 
+      {/* Introdução simples para contextualizar o utilizador */}
       <p className="tamanhos-intro">
-        Encontra o tamanho ideal para garantir máximo conforto e performance.
-        As medidas podem variar ligeiramente entre marcas e modelos, por isso
-        recomendamos consultar as tabelas abaixo antes de finalizar a compra.
+        Encontra o tamanho ideal para garantir máximo conforto e performance
+        As medidas podem variar entre marcas e modelos, por isso recomendamos
+        consultar as tabelas antes de finalizar a compra
       </p>
 
-      {/* Sapatilhas */}
+      {/* Sapatilhas Adulto */}
       <div className="tamanhos-bloco">
-        <h2 className="tamanhos-subtitulo">Sapatilhas</h2>
+        <h2 className="tamanhos-subtitulo">Sapatilhas (Adulto)</h2>
+
         <p className="tamanhos-texto">
-          Para medir o teu pé, coloca-o sobre uma folha, marca o calcanhar e a ponta do dedo maior,
-          e mede a distância entre os dois pontos.
+          Para medir o teu pé, coloca-o sobre uma folha, marca o calcanhar e a ponta do dedo maior
+          e mede a distância entre os dois pontos
         </p>
 
         <div className="tabela-scroll">
@@ -41,7 +44,32 @@ function GuiaDeTamanhos() {
         </div>
       </div>
 
-      {/* Roupa */}
+      {/* Sapatilhas Criança */}
+      <div className="tamanhos-bloco">
+        <h2 className="tamanhos-subtitulo">Sapatilhas (Criança)</h2>
+
+        <div className="tabela-scroll">
+          <table className="tamanhos-tabela">
+            <thead>
+              <tr>
+                <th>EU</th>
+                <th>US</th>
+                <th>UK</th>
+                <th>CM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>28</td><td>10C</td><td>9.5</td><td>17</td></tr>
+              <tr><td>30</td><td>12C</td><td>11.5</td><td>18.5</td></tr>
+              <tr><td>32</td><td>1Y</td><td>13.5</td><td>20</td></tr>
+              <tr><td>34</td><td>2.5Y</td><td>2</td><td>21.5</td></tr>
+              <tr><td>36</td><td>4Y</td><td>3.5</td><td>23</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Roupa Homem */}
       <div className="tamanhos-bloco">
         <h2 className="tamanhos-subtitulo">Roupa (Homem)</h2>
 
@@ -65,12 +93,60 @@ function GuiaDeTamanhos() {
         </div>
       </div>
 
-      {/* NBA Jerseys */}
+      {/* Roupa Mulher */}
       <div className="tamanhos-bloco">
-        <h2 className="tamanhos-subtitulo">NBA Jerseys</h2>
+        <h2 className="tamanhos-subtitulo">Roupa (Mulher)</h2>
+
+        <div className="tabela-scroll">
+          <table className="tamanhos-tabela">
+            <thead>
+              <tr>
+                <th>Tamanho</th>
+                <th>Busto (cm)</th>
+                <th>Cintura (cm)</th>
+                <th>Quadril (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>XS</td><td>76-83</td><td>60-67</td><td>84-91</td></tr>
+              <tr><td>S</td><td>83-90</td><td>67-74</td><td>91-98</td></tr>
+              <tr><td>M</td><td>90-97</td><td>74-81</td><td>98-105</td></tr>
+              <tr><td>L</td><td>97-104</td><td>81-88</td><td>105-112</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Roupa Criança */}
+      <div className="tamanhos-bloco">
+        <h2 className="tamanhos-subtitulo">Roupa (Criança)</h2>
+
+        <div className="tabela-scroll">
+          <table className="tamanhos-tabela">
+            <thead>
+              <tr>
+                <th>Idade</th>
+                <th>Altura (cm)</th>
+                <th>Peito (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>6-7 anos</td><td>116-122</td><td>57-60</td></tr>
+              <tr><td>8-9 anos</td><td>128-134</td><td>63-67</td></tr>
+              <tr><td>10-11 anos</td><td>140-146</td><td>70-74</td></tr>
+              <tr><td>12-13 anos</td><td>152-158</td><td>77-81</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* NBA Jerseys Adulto */}
+      <div className="tamanhos-bloco">
+        <h2 className="tamanhos-subtitulo">NBA Jerseys (Adulto)</h2>
+
         <p className="tamanhos-texto">
-          As camisolas NBA têm um corte mais largo e comprido. Se preferires um fit mais justo,
-          recomendamos escolher um tamanho abaixo.
+          As camisolas NBA têm um corte mais largo e comprido
+          Se preferires um fit mais justo, recomendamos escolher um tamanho abaixo
         </p>
 
         <div className="tabela-scroll">
@@ -92,21 +168,42 @@ function GuiaDeTamanhos() {
         </div>
       </div>
 
+      {/* NBA Jerseys Criança */}
+      <div className="tamanhos-bloco">
+        <h2 className="tamanhos-subtitulo">NBA Jerseys (Criança)</h2>
+
+        <div className="tabela-scroll">
+          <table className="tamanhos-tabela">
+            <thead>
+              <tr>
+                <th>Idade</th>
+                <th>Peito (cm)</th>
+                <th>Comprimento (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>6-7 anos</td><td>60-64</td><td>52</td></tr>
+              <tr><td>8-9 anos</td><td>64-68</td><td>56</td></tr>
+              <tr><td>10-11 anos</td><td>68-72</td><td>60</td></tr>
+              <tr><td>12-13 anos</td><td>72-76</td><td>64</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {/* Acessórios */}
       <div className="tamanhos-bloco">
         <h2 className="tamanhos-subtitulo">Acessórios</h2>
 
         <ul className="tamanhos-lista">
-          <li><strong>Meias:</strong> Tamanho único (39-46)</li>
-          <li><strong>Bonés:</strong> Ajustáveis (strapback ou snapback)</li>
           <li><strong>Mangas de braço:</strong> S/M (25-30 cm), L/XL (30-35 cm)</li>
         </ul>
       </div>
 
       {/* Nota final */}
       <p className="tamanhos-nota">
-        As medidas são aproximadas e podem variar entre marcas. Em caso de dúvida,
-        recomendamos escolher o tamanho acima.
+        As medidas são aproximadas e podem variar entre marcas
+        Em caso de dúvida, recomendamos escolher o tamanho acima
       </p>
     </section>
   )

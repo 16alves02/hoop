@@ -16,40 +16,53 @@ interface Review {
 }
 
 function ProdutoDetalhes() {
+  // Puxo o ID da URL
   const { id } = useParams<{ id: string }>()
+
+  // Procuro o produto pelo ID
   const produto: Produto | undefined = produtos.find(p => p.id === Number(id))
 
+  // Contextos principais: carrinho, favoritos, auth e toasts
   const { adicionarProduto } = useContext(CarrinhoContext)
   const { adicionarFavorito, removerFavorito, estaNosFavoritos } = useContext(FavoritosContext)
   const auth = useContext(AuthContext)
   const { addToast } = useContext(ToastContext)
 
+  // Estado da galeria de imagens
   const [imagemAtiva, setImagemAtiva] = useState(0)
+
+  // Estado do tamanho selecionado
   const [tamanhoSelecionado, setTamanhoSelecionado] = useState<string>()
   const [erroTamanho, setErroTamanho] = useState(false)
 
-  // Reviews
+  // Estado das reviews
   const [reviews, setReviews] = useState<Review[]>([])
   const [novaEstrelas, setNovaEstrelas] = useState(5)
   const [novoComentario, setNovoComentario] = useState("")
   const [nomeReviewer, setNomeReviewer] = useState(auth?.user?.nome || "Anónimo")
 
+  // Se o produto não existir, mostro mensagem simples
   if (!produto) {
     return <p className="text-center">Produto não encontrado.</p>
   }
 
+  // Verifico se o produto tem tamanhos
   const temTamanhos =
     Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0
 
+  // Verifico se já está nos favoritos
   const isFavorito = estaNosFavoritos(produto.id)
 
+  // Carrego reviews iniciais do produto
   useEffect(() => {
     if (produto.reviews) {
       setReviews(produto.reviews)
     }
   }, [produto])
 
+  // Adicionar ao carrinho
   const handleAdicionar = () => {
+    // Se o produto tem tamanhos, obrigo a escolher um
     if (temTamanhos) {
       if (!tamanhoSelecionado) {
         setErroTamanho(true)
@@ -65,6 +78,7 @@ function ProdutoDetalhes() {
     setErroTamanho(false)
   }
 
+  // Adicionar ou remover dos favoritos
   const toggleFavorito = () => {
     if (isFavorito) {
       removerFavorito(produto.id)
@@ -75,6 +89,7 @@ function ProdutoDetalhes() {
     }
   }
 
+  // Submeter nova review
   const submeterReview = (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -90,6 +105,7 @@ function ProdutoDetalhes() {
       data: new Date().toLocaleDateString("pt-PT"),
     }
 
+    // Adiciono a nova review ao topo
     setReviews(prev => [novaReview, ...prev])
 
     addToast("Obrigado pela tua avaliação!", "success")
@@ -99,7 +115,11 @@ function ProdutoDetalhes() {
 
   return (
     <div className="produto-detalhes-page">
+
+      {/*  GALERIA + INFO  */}
       <div className="produto-detalhes-container">
+
+        {/* Galeria de imagens */}
         <div className="produto-detalhes-galeria">
           <img
             src={produto.imagens[imagemAtiva]}
@@ -120,19 +140,23 @@ function ProdutoDetalhes() {
           </div>
         </div>
 
+        {/* Informação do produto */}
         <div className="produto-detalhes-info">
           <h1>{produto.jogador || produto.nome}</h1>
           {produto.equipa && <p className="produto-equipa">{produto.equipa}</p>}
           <p className="produto-preco">€{produto.preco.toFixed(2)}</p>
 
+          {/* Botão de favoritos */}
           <button onClick={toggleFavorito} className="favorito-btn-detalhes">
             <i className={isFavorito ? "fas fa-heart" : "far fa-heart"}></i>
             {isFavorito ? " Remover dos Favoritos" : " Adicionar aos Favoritos"}
           </button>
 
+          {/* Tamanhos */}
           {temTamanhos && (
             <div className="tamanhos">
               <h3>Escolhe o tamanho:</h3>
+
               <div className="tamanhos-lista">
                 {produto.tamanhos!.map(t => (
                   <button
@@ -147,14 +171,17 @@ function ProdutoDetalhes() {
                   </button>
                 ))}
               </div>
+
               {erroTamanho && <p className="erro-tamanho">Seleciona um tamanho.</p>}
             </div>
           )}
 
+          {/* Botão adicionar ao carrinho */}
           <button onClick={handleAdicionar} className="produto-add-btn-detalhes">
             Adicionar ao Carrinho
           </button>
 
+          {/* Descrição */}
           <div className="produto-descricao">
             <h3>Descrição</h3>
             <p>{produto.descricao}</p>
@@ -162,12 +189,16 @@ function ProdutoDetalhes() {
         </div>
       </div>
 
+      {/*  REVIEWS  */}
       <div className="reviews-seccao">
         <h2>Avaliações</h2>
 
+        {/* Formulário nova review */}
         <div className="reviews-nova">
           <h3>Deixa a tua avaliação</h3>
+
           <form onSubmit={submeterReview}>
+            {/* Estrelas clicáveis */}
             <div className="reviews-estrelas-input">
               {[1, 2, 3, 4, 5].map(s => (
                 <span
@@ -201,6 +232,7 @@ function ProdutoDetalhes() {
           </form>
         </div>
 
+        {/* Lista de reviews */}
         <div className="reviews-lista">
           {reviews.length > 0 ? (
             reviews.map((r, i) => (
@@ -209,9 +241,11 @@ function ProdutoDetalhes() {
                   <strong>{r.nome}</strong>
                   <span className="review-data">{r.data}</span>
                 </div>
+
                 <div className="review-estrelas">
                   {"★".repeat(r.estrelas)}{"☆".repeat(5 - r.estrelas)}
                 </div>
+
                 <p className="review-comentario">{r.comentario}</p>
               </div>
             ))

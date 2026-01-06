@@ -10,25 +10,39 @@ import { FaMicrosoft } from "react-icons/fa"
 
 function Login() {
   const navigate = useNavigate()
+
+  // Puxo o contexto da autenticação para fazer login
   const auth = useContext(AuthContext)
+
+  // Toasts para feedback rápido ao utilizador
   const { addToast } = useContext(ToastContext)
 
+  // Se por algum motivo o contexto não existir, não renderizo nada
   if (!auth) return null
 
   const { login } = auth
 
+  // Função que simula login com diferentes providers
+  // Aqui não há autenticação real, é só para avançar no fluxo da app
   const handleLogin = (provider: "google" | "apple" | "email" | "outlook") => {
-    // Simulação de login (igual ao CheckoutLogin)
+    // User fake só para simular login
     const fakeUser = {
       nome: provider === "google" ? "Leonardo Alves" : "Utilizador HOOP",
       email: `user@${provider}.com`,
       provider,
     }
+
+    // Atualiza o contexto com o user
     login(fakeUser)
+
+    // Mostra mensagem de boas-vindas
     addToast(`Bem-vindo de volta, ${fakeUser.nome}!`, "success")
-    navigate(-1) // Volta para onde estava (ex: perfil, home)
+
+    // Volta para a página anterior (ex: perfil, home)
+    navigate(-1)
   }
 
+  // Se o utilizador quiser criar conta em vez de login rápido
   const handleSignup = () => {
     navigate("/signup")
   }
@@ -38,7 +52,9 @@ function Login() {
       <div className="checkout-card">
         <h1 className="checkout-titulo">Iniciar Sessão</h1>
 
+        {/* Botões de login rápido com diferentes providers */}
         <div className="checkout-login-options">
+
           <button className="checkout-login-btn" onClick={() => handleLogin("google")}>
             <FcGoogle size={22} /> Continuar com Google
           </button>
@@ -55,8 +71,15 @@ function Login() {
             <MdEmail size={22} /> Continuar com Email
           </button>
 
+          {/* Link para registo */}
           <p className="checkout-signup-link">
-            Não tens conta? <span onClick={handleSignup} style={{ cursor: "pointer", color: "#f2b01e" }}>Regista-te aqui</span>
+            Não tens conta?{" "}
+            <span
+              onClick={handleSignup}
+              style={{ cursor: "pointer", color: "#f2b01e" }}
+            >
+              Regista-te aqui
+            </span>
           </p>
         </div>
       </div>

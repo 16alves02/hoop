@@ -7,11 +7,10 @@ import "../styles/Produtos.css"
 const ITENS_POR_PAGINA = 20
 
 function Produtos() {
+  // searchParams controla todos os filtros via URL
   const [searchParams, setSearchParams] = useSearchParams()
 
-  /* ===============================
-     PARÂMETROS DA URL (source of truth)
-  =============================== */
+  /* PARÂMETROS DA URL (source of truth) */
 
   const tipoParam = searchParams.get("tipo") || "todos"
   const generoParams = searchParams.getAll("genero")
@@ -26,14 +25,11 @@ function Produtos() {
   const ordenacaoParam = searchParams.get("ordenar") || "relevancia"
   const paginaParam = parseInt(searchParams.get("pagina") || "1", 10)
 
-  /* ===============================
-     UI STATE (não influencia filtros)
-  =============================== */
+  /* UI STATE (não influencia filtros) */
 
   const [paginaAtual, setPaginaAtual] = useState(paginaParam)
   const [mobileFiltrosOpen, setMobileFiltrosOpen] = useState(false)
 
-  // Secções expansíveis da sidebar
   const [seccoesAbertas, setSeccoesAbertas] = useState<Set<string>>(
     new Set(["tipo", "genero", "tamanho", "preco", "marca", "jogador", "equipa", "cor", "ofertas"])
   )
@@ -46,9 +42,7 @@ function Produtos() {
     })
   }
 
-  /* ===============================
-     LISTAS DISPONÍVEIS (fixas / derivadas)
-  =============================== */
+  /* LISTAS DISPONÍVEIS */
 
   const tiposDisponiveis = ["todos", "camisola", "sapatilha", "bola", "acessorio"]
   const generosDisponiveis = ["homem", "mulher", "criança"]
@@ -86,9 +80,7 @@ function Produtos() {
     return Array.from(cores).sort()
   }, [])
 
-  /* ===============================
-     CONTAGENS (para mostrar ao lado dos filtros)
-  =============================== */
+  /* CONTAGENS PARA FILTROS */
 
   const contagens = useMemo(() => {
     const contar = (campo: "tipo" | "marca" | "equipa" | "jogador", valor: string) =>
@@ -109,9 +101,7 @@ function Produtos() {
     }
   }, [])
 
-  /* ===============================
-     HELPERS DE URL
-  =============================== */
+  /* HELPERS DE URL */
 
   const atualizarFiltro = (chave: string, valor: string | string[] | null) => {
     const params = new URLSearchParams(searchParams)
@@ -136,9 +126,7 @@ function Produtos() {
     atualizarFiltro(chave, novo.length ? novo : [])
   }
 
-  /* ===============================
-     FILTRAGEM PRINCIPAL
-  =============================== */
+  /* FILTRAGEM PRINCIPAL */
 
   const produtosFiltrados = useMemo(() => {
     let lista = [...produtos]
@@ -193,7 +181,6 @@ function Produtos() {
       case "novos":
         ordenados.sort((a, b) => b.id - a.id)
         break
-      // default: relevância (ordem original)
     }
 
     return ordenados
@@ -202,9 +189,7 @@ function Produtos() {
     corParams, precoParam, jogadorParam, novidadeParam, promocaoParam, ordenacaoParam
   ])
 
-  /* ===============================
-     PAGINAÇÃO
-  =============================== */
+  /* PAGINAÇÃO */
 
   const totalPaginas = Math.ceil(produtosFiltrados.length / ITENS_POR_PAGINA)
 
@@ -227,14 +212,13 @@ function Produtos() {
     setPaginaAtual(1)
   }
 
-  /* ===============================
-     RENDER
-  =============================== */
+  /* RENDER */
 
   return (
     <div className="produtos-page">
       <h1 className="produtos-titulo">Coleção Completa</h1>
 
+      {/* Botão mobile para abrir filtros */}
       <button
         className="mobile-filtros-toggle"
         onClick={() => setMobileFiltrosOpen(!mobileFiltrosOpen)}
@@ -244,6 +228,8 @@ function Produtos() {
 
       <div className={`produtos-filtros-container ${mobileFiltrosOpen ? "open" : ""}`}>
         <aside className="produtos-filtros-sidebar">
+
+          {/* Header dos filtros */}
           <div className="filtros-header">
             <h3 className="filtros-titulo">Filtros</h3>
             {searchParams.toString() && (
@@ -253,11 +239,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Tipo */}
+          {/* TIPO */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("tipo")}>
               Tipo <span className="filtro-icon">{seccoesAbertas.has("tipo") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("tipo") && (
               <div className="filtro-conteudo">
                 {tiposDisponiveis.filter(t => t !== "todos").map(tipo => (
@@ -268,18 +255,23 @@ function Produtos() {
                       checked={tipoParam === tipo}
                       onChange={() => atualizarFiltro("tipo", tipo)}
                     />
-                    <span>{tipo.charAt(0).toUpperCase() + tipo.slice(1)} ({contagens.tipos[tipo] ?? 0})</span>
+                    <span>
+                      {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+                      {" "}
+                      ({contagens.tipos[tipo] ?? 0})
+                    </span>
                   </label>
                 ))}
               </div>
             )}
           </div>
 
-          {/* Género */}
+          {/* GÉNERO */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("genero")}>
               Género <span className="filtro-icon">{seccoesAbertas.has("genero") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("genero") && (
               <div className="filtro-conteudo">
                 {generosDisponiveis.map(g => (
@@ -296,11 +288,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Tamanho */}
+          {/* TAMANHO */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("tamanho")}>
               Tamanho <span className="filtro-icon">{seccoesAbertas.has("tamanho") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("tamanho") && (
               <div className="filtro-conteudo">
                 <div className="filtro-tamanhos">
@@ -318,11 +311,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Preço */}
+          {/* PREÇO */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("preco")}>
               Preço <span className="filtro-icon">{seccoesAbertas.has("preco") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("preco") && (
               <div className="filtro-conteudo">
                 {intervalosPreco.map(i => (
@@ -336,6 +330,7 @@ function Produtos() {
                     <span>{i.label}</span>
                   </label>
                 ))}
+
                 <label className="filtro-checkbox">
                   <input
                     type="radio"
@@ -349,11 +344,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Marca */}
+          {/* MARCA */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("marca")}>
               Marca <span className="filtro-icon">{seccoesAbertas.has("marca") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("marca") && (
               <div className="filtro-conteudo">
                 {marcasUnicas.filter(m => m !== "todos").map(m => (
@@ -371,11 +367,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Jogador */}
+          {/* JOGADOR */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("jogador")}>
               Jogador <span className="filtro-icon">{seccoesAbertas.has("jogador") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("jogador") && (
               <div className="filtro-conteudo">
                 {jogadoresUnicos.filter(j => j !== "todos").map(j => (
@@ -393,11 +390,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Equipa */}
+          {/* EQUIPA */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("equipa")}>
               Equipa <span className="filtro-icon">{seccoesAbertas.has("equipa") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("equipa") && (
               <div className="filtro-conteudo">
                 {equipasUnicas.filter(e => e !== "todos").map(e => (
@@ -415,11 +413,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Cor */}
+          {/* COR */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("cor")}>
               Cor <span className="filtro-icon">{seccoesAbertas.has("cor") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("cor") && (
               <div className="filtro-conteudo">
                 <div className="filtro-cores-grid">
@@ -429,7 +428,9 @@ function Produtos() {
                       className={`filtro-cor-btn ${corParams.includes(cor) ? "ativo" : ""}`}
                       style={{
                         backgroundColor: cor,
-                        border: ["branco", "white"].includes(cor.toLowerCase()) ? "2px solid #ccc" : "none"
+                        border: ["branco", "white"].includes(cor.toLowerCase())
+                          ? "2px solid #ccc"
+                          : "none"
                       }}
                       onClick={() => toggleMultiFiltro("cor", cor, corParams)}
                       aria-label={`Filtrar por ${cor}`}
@@ -440,11 +441,12 @@ function Produtos() {
             )}
           </div>
 
-          {/* Ofertas */}
+          {/* OFERTAS */}
           <div className="filtro-seccao expansivel">
             <h4 onClick={() => toggleSeccao("ofertas")}>
               Ofertas <span className="filtro-icon">{seccoesAbertas.has("ofertas") ? "-" : "+"}</span>
             </h4>
+
             {seccoesAbertas.has("ofertas") && (
               <div className="filtro-conteudo">
                 <label className="filtro-checkbox">
@@ -455,6 +457,7 @@ function Produtos() {
                   />
                   <span>Novidades</span>
                 </label>
+
                 <label className="filtro-checkbox">
                   <input
                     type="checkbox"
@@ -468,10 +471,14 @@ function Produtos() {
           </div>
         </aside>
 
+        {/* LISTA DE PRODUTOS + ORDENAÇÃO */}
         <div className="produtos-grid-container">
+
+          {/* Header da grelha */}
           <div className="produtos-header">
             <p className="produtos-count">
-              {produtosFiltrados.length} produto{produtosFiltrados.length !== 1 ? "s" : ""}
+              {produtosFiltrados.length} produto
+              {produtosFiltrados.length !== 1 ? "s" : ""}
             </p>
 
             <select
@@ -487,18 +494,25 @@ function Produtos() {
             </select>
           </div>
 
+          {/* Caso não haja produtos */}
           {produtosPaginados.length === 0 ? (
-            <p className="produtos-vazio">Nenhum produto encontrado com os filtros selecionados.</p>
+            <p className="produtos-vazio">
+              Nenhum produto encontrado com os filtros selecionados.
+            </p>
           ) : (
             <>
+              {/* Grelha de produtos */}
               <div className="produtos-grid card-grid">
                 {produtosPaginados.map(produto => (
                   <ProdutoCard key={produto.id} produto={produto} />
                 ))}
               </div>
 
+              {/* PAGINAÇÃO */}
               {totalPaginas > 1 && (
                 <div className="produtos-paginacao">
+
+                  {/* Botão anterior */}
                   <button
                     className="paginacao-btn"
                     onClick={() => mudarPagina(paginaAtual - 1)}
@@ -507,13 +521,17 @@ function Produtos() {
                     ←
                   </button>
 
+                  {/* Números das páginas */}
                   {Array.from({ length: Math.min(7, totalPaginas) }, (_, i) => {
                     let pagina = i + 1
+
                     if (totalPaginas > 7 && paginaAtual > 4) {
                       pagina = paginaAtual - 3 + i
                       if (pagina < 1) pagina = i + 1
                     }
+
                     if (pagina > totalPaginas) pagina = totalPaginas
+
                     return (
                       <button
                         key={pagina}
@@ -525,14 +543,22 @@ function Produtos() {
                     )
                   })}
 
-                  {totalPaginas > 7 && paginaAtual < totalPaginas - 3 && <span className="paginacao-ellipsis">...</span>}
-
+                  {/* Reticências quando há mais páginas */}
                   {totalPaginas > 7 && paginaAtual < totalPaginas - 3 && (
-                    <button className="paginacao-btn" onClick={() => mudarPagina(totalPaginas)}>
+                    <span className="paginacao-ellipsis">...</span>
+                  )}
+
+                  {/* Botão para última página */}
+                  {totalPaginas > 7 && paginaAtual < totalPaginas - 3 && (
+                    <button
+                      className="paginacao-btn"
+                      onClick={() => mudarPagina(totalPaginas)}
+                    >
                       {totalPaginas}
                     </button>
                   )}
 
+                  {/* Botão seguinte */}
                   <button
                     className="paginacao-btn"
                     onClick={() => mudarPagina(paginaAtual + 1)}

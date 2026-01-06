@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { useContext } from "react"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { FaPaypal, FaApplePay, FaGooglePay, FaUser, FaCreditCard } from "react-icons/fa6"
 import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
@@ -10,23 +9,38 @@ import "../styles/Checkout.css"
 
 function CheckoutPagamento() {
   const navigate = useNavigate()
+
+  // Puxo o carrinho para saber os itens e limpar no final
   const carrinho = useContext(CarrinhoContext)
 
+  // Estado do método de pagamento escolhido
   const [metodo, setMetodo] = useState<string | null>(null)
+
+  // Estados do cartão
   const [cardNumber, setCardNumber] = useState("")
   const [expiry, setExpiry] = useState("")
   const [cvv, setCvv] = useState("")
+
+  // Estado MBWay
   const [telemovel, setTelemovel] = useState("")
+
+  // Bandeira do cartão detetada automaticamente
   const [cardBrand, setCardBrand] = useState<"visa" | "mastercard" | "amex" | null>(null)
+
+  // Erros de validação
   const [errors, setErrors] = useState<Record<string, string>>({})
+
+  // Referência MB gerada quando o utilizador escolhe multibanco
   const [referenciaMB, setReferenciaMB] = useState<string | null>(null)
 
   if (!carrinho) return null
 
   const { itens, limparCarrinho } = carrinho
+
+  // Total da compra
   const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
 
-  // Deteção de bandeira
+  // Deteta a bandeira do cartão pelos primeiros dígitos
   const detectBrand = (number: string): "visa" | "mastercard" | "amex" | null => {
     const cleaned = number.replace(/\s/g, "")
     if (/^4/.test(cleaned)) return "visa"
@@ -35,29 +49,35 @@ function CheckoutPagamento() {
     return null
   }
 
-  // Algoritmo Luhn
+  // Algoritmo de Luhn para validar cartões
   const luhnCheck = (number: string): boolean => {
     const digits = number.replace(/\D/g, "").split("").map(Number)
     if (digits.length < 13) return false
+
     let sum = 0
     let isEven = false
+
     for (let i = digits.length - 1; i >= 0; i--) {
       let digit = digits[i]
+
       if (isEven) {
         digit *= 2
         if (digit > 9) digit -= 9
       }
+
       sum += digit
       isEven = !isEven
     }
+
     return sum % 10 === 0
   }
 
+  // Sempre que o número muda, tento detetar a bandeira
   useEffect(() => {
     setCardBrand(detectBrand(cardNumber))
   }, [cardNumber])
 
-  // Máscaras
+  // Máscara do número do cartão
   const formatCardNumber = (value: string) => {
     const digits = value.replace(/\D/g, "")
     const match = digits.match(/(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})/)
@@ -65,6 +85,7 @@ function CheckoutPagamento() {
     return [match[1], match[2], match[3], match[4]].filter(Boolean).join(" ")
   }
 
+  // Máscara da validade
   const formatExpiry = (value: string) => {
     const digits = value.replace(/\D/g, "")
     if (digits.length >= 2) {
@@ -73,9 +94,10 @@ function CheckoutPagamento() {
     return digits
   }
 
+  // Máscara MBWay
   const formatTelemovel = (value: string) => value.replace(/\D/g, "").slice(0, 9)
 
-  // Validação cartão
+  // Validação do cartão
   const validateCard = (): Record<string, string> => {
     const newErrors: Record<string, string> = {}
 
@@ -92,6 +114,7 @@ function CheckoutPagamento() {
     } else {
       const month = parseInt(monthStr, 10)
       const year = parseInt(`20${yearStr}`, 10)
+
       if (month < 1 || month > 12) {
         newErrors.expiry = "Mês inválido"
       } else {
@@ -110,7 +133,7 @@ function CheckoutPagamento() {
     return newErrors
   }
 
-  // Validação MBWay - agora sempre retorna objeto com string values
+  // Validação MBWay
   const validateMBWay = (): Record<string, string> => {
     if (!/^9\d{8}$/.test(telemovel)) {
       return { telemovel: "Telemóvel inválido (deve começar por 9 e ter 9 dígitos)" }
@@ -118,15 +141,15 @@ function CheckoutPagamento() {
     return {}
   }
 
+  // Gera referência Multibanco fake
   const generateReferenciaMultibanco = () => {
     const entidade = "12345"
     const referencia = Math.floor(100000000 + Math.random() * 900000000)
     const valor = total.toFixed(2)
-    return `Entidade: ${entidade} | 
-            Referência: ${referencia} | 
-            Valor: €${valor}`
+    return `Entidade: ${entidade} | Referência: ${referencia} | Valor: €${valor}`
   }
 
+  // Finalizar pagamento
   const handleFinalizar = () => {
     setErrors({})
     setReferenciaMB(null)
@@ -156,23 +179,25 @@ function CheckoutPagamento() {
 
     if (hasError) return
 
-    // Se chegou aqui -> pagamento válido
+    // Multibanco gera referência e espera 6s antes de avançar
     if (metodo === "multibanco") {
       setReferenciaMB(generateReferenciaMultibanco())
       setTimeout(() => {
-        limparCarrinho() // Limpa o carrinho
+        limparCarrinho()
         navigate("/checkout/sucesso")
       }, 6000)
       return
     }
 
-    // Todos os outros métodos
-    limparCarrinho() // Limpa o carrinho imediatamente
+    // Outros métodos avançam direto
+    limparCarrinho()
     navigate("/checkout/sucesso")
   }
 
   return (
     <div className="checkout-page">
+
+      {/* Barra de progresso */}
       <div className="checkout-progress">
         <div className="checkout-step ativo"><FaUser /></div>
         <div className="checkout-step ativo"><FaHome /></div>
@@ -181,10 +206,12 @@ function CheckoutPagamento() {
       </div>
 
       <div className="checkout-entrega-container">
-        {/* Esquerda: Métodos e formulários */}
+
+        {/* Coluna esquerda */}
         <div className="checkout-form-left">
           <h2>Método de Pagamento</h2>
 
+          {/* Botões dos métodos */}
           <div className="checkout-pagamento-metodos">
             <button onClick={() => setMetodo("cartao")} className={metodo === "cartao" ? "ativo" : ""}>
               <FaCreditCard size={22} /> Cartão
@@ -211,9 +238,10 @@ function CheckoutPagamento() {
             </button>
           </div>
 
-          {/* Cartão */}
+          {/* Formulário cartão */}
           {metodo === "cartao" && (
             <div className="checkout-form-group card-form">
+
               <div className="card-input-wrapper">
                 <input
                   placeholder="Número do Cartão"
@@ -222,15 +250,18 @@ function CheckoutPagamento() {
                   maxLength={19}
                   className={errors.card ? "error" : ""}
                 />
+
                 {cardBrand && (
                   <div className={`card-brand ${cardBrand}`}>
                     <span className="brand-text">{cardBrand.toUpperCase()}</span>
                   </div>
                 )}
+
                 {errors.card && <span className="error-message">{errors.card}</span>}
               </div>
 
               <div className="card-row">
+
                 <div className="card-input-wrapper">
                   <input
                     placeholder="MM/AA"
@@ -252,11 +283,12 @@ function CheckoutPagamento() {
                   />
                   {errors.cvv && <span className="error-message">{errors.cvv}</span>}
                 </div>
+
               </div>
             </div>
           )}
 
-          {/* MB Way */}
+          {/* MBWay */}
           {metodo === "mbway" && (
             <div className="checkout-form-group">
               <input
@@ -275,26 +307,31 @@ function CheckoutPagamento() {
             <div className="multibanco-referencia">
               <h3>Referência Multibanco</h3>
               <p>{referenciaMB}</p>
-              <small>Paga até 48h em qualquer Multibanco ou homebanking.</small>
+              <small>Paga até 48h em qualquer Multibanco ou homebanking</small>
             </div>
           )}
 
+          {/* Métodos externos */}
           {["paypal", "apple", "google"].includes(metodo || "") && (
             <p className="redirect-info">
-              Serás redirecionado para <strong>{metodo?.toUpperCase()}</strong> para concluir o pagamento.
+              Serás redirecionado para <strong>{metodo?.toUpperCase()}</strong> para concluir o pagamento
             </p>
           )}
 
+          {/* Botão final */}
           <button className="checkout-btn large" onClick={handleFinalizar}>
-            {metodo === "multibanco" && !referenciaMB ? "Gerar Referência e Pagar" : "Confirmar Pagamento"}
+            {metodo === "multibanco" && !referenciaMB
+              ? "Gerar Referência e Pagar"
+              : "Confirmar Pagamento"}
           </button>
         </div>
 
-        {/* Direita: Resumo */}
+        {/* Coluna direita - resumo */}
         <div className="checkout-resumo">
           <h3>Resumo da Encomenda ({itens.length} itens)</h3>
+
           <div className="resumo-itens">
-            {itens.map((item) => (
+            {itens.map(item => (
               <div key={item.id} className="resumo-item">
                 <div className="resumo-item-info">
                   <img src={item.imagens[0]} alt={item.nome} className="resumo-img" />
@@ -303,10 +340,13 @@ function CheckoutPagamento() {
                     <p className="resumo-quantidade">Quantidade: {item.quantidade}</p>
                   </div>
                 </div>
-                <p className="resumo-preco">€{(item.preco * item.quantidade).toFixed(2)}</p>
+                <p className="resumo-preco">
+                  €{(item.preco * item.quantidade).toFixed(2)}
+                </p>
               </div>
             ))}
           </div>
+
           <div className="resumo-total">
             <span>Total a pagar</span>
             <strong>€{total.toFixed(2)}</strong>

@@ -229,17 +229,18 @@
   transform: scale(1.08);
 }
 
-.produto-badge {
+.produto-new-badge,
+.produto-sale-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
   position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  top: 1rem;
+  left: 1rem;
   z-index: 2;
-  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .produto-new-badge {
@@ -249,7 +250,7 @@
 
 .produto-sale-badge {
   background: #ff3b30;
-  color: #fff;
+  color: var(--text-1);
 }
 
 .produto-card-info {

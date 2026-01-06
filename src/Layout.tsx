@@ -9,52 +9,66 @@ import "./styles/Layout.css"
 function Layout() {
   const navigate = useNavigate()
 
-  // Contextos
+  // Quantidade de itens no carrinho
   const { carrinhoQtd } = useContext(CarrinhoContext)
+
+  // Quantidade de favoritos guardados
   const { quantidadeFavoritos } = useContext(FavoritosContext)
+
+  // Estado de autenticação (user logado ou não)
   const auth = useContext(AuthContext)
+
+  // Toasts para feedback rápido
   const { addToast } = useContext(ToastContext)
+
+  // Estado do menu mobile (aberto/fechado)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Função de pesquisa
+  /* ==============
+     Função de pesquisa
+     Lê o termo, redireciona para /pesquisa/termo
+  ============== */
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
     const termoInput = e.currentTarget.elements.namedItem("termo") as HTMLInputElement
     const termo = termoInput.value.trim()
 
     if (termo !== "") {
       navigate(`/pesquisa/${encodeURIComponent(termo)}`)
-      termoInput.value = "" // Limpa o campo após pesquisa
+      termoInput.value = "" // Limpa o campo depois da pesquisa
     }
   }
 
-  // Toggle do menu mobile
+  // Abre/fecha o menu mobile
   const toggleMobileMenu = () => {
     setMobileMenuOpen(prev => !prev)
   }
 
-  // Clique no ícone de perfil
+  // Quando o utilizador clica no ícone de perfil
   const handlePerfilClick = () => {
     if (auth?.isAuthenticated && auth.user) {
       navigate("/perfil")
     } else {
-      addToast("Inicia sessão para aceder à tua conta", "info");
+      addToast("Inicia sessão para aceder à tua conta", "info")
       navigate("/login")
     }
   }
 
   return (
     <div className="layout">
-      {/* ================= Header ================= */}
+
+      {/*  HEADER  */}
       <header className="header">
         <div className="header-top">
           <div className="header-container">
-            {/* Logo à esquerda */}
+
+            {/* Logo principal */}
             <Link to="/" className="header-logo">
               <img src="/img/Logo-HOOP2.png" alt="HOOP Store" />
             </Link>
 
-            {/* Pesquisa central (desktop) */}
+            {/* Barra de pesquisa (versão desktop) */}
             <form className="header-search-desktop" onSubmit={handleSearch}>
               <input
                 type="text"
@@ -67,9 +81,10 @@ function Layout() {
               </button>
             </form>
 
-            {/* Ícones à direita */}
+            {/* Ícones do lado direito */}
             <div className="header-icons">
-              {/* Pesquisa mobile */}
+
+              {/* Pesquisa mobile (aparece só em ecrãs pequenos) */}
               <form className="header-search-mobile" onSubmit={handleSearch}>
                 <input
                   type="text"
@@ -90,16 +105,22 @@ function Layout() {
                 )}
               </Link>
 
-              {/* Perfil - com verificação de login */}
+              {/* Perfil - mostra nome se estiver autenticado */}
               {auth?.isAuthenticated && auth.user ? (
                 <div className="header-user">
                   <Link to="/perfil" className="header-icon">
                     <i className="far fa-user"></i>
                   </Link>
-                  <span className="header-user-name">Olá, {auth.user.nome.split(" ")[0]}</span>
+                  <span className="header-user-name">
+                    Olá, {auth.user.nome.split(" ")[0]}
+                  </span>
                 </div>
               ) : (
-                <button onClick={handlePerfilClick} className="header-icon" aria-label="Iniciar sessão">
+                <button
+                  onClick={handlePerfilClick}
+                  className="header-icon"
+                  aria-label="Iniciar sessão"
+                >
                   <i className="far fa-user"></i>
                 </button>
               )}
@@ -112,7 +133,7 @@ function Layout() {
                 )}
               </Link>
 
-              {/* Botão hamburger para menu mobile */}
+              {/* Botão hamburger (abre menu mobile) */}
               <button
                 className="header-mobile-toggle"
                 onClick={toggleMobileMenu}
@@ -124,7 +145,7 @@ function Layout() {
           </div>
         </div>
 
-        {/* ================= Menu de Categorias ================= */}
+        {/*  MENU DE CATEGORIAS  */}
         <nav className={`header-categories ${mobileMenuOpen ? "open" : ""}`}>
           <div className="header-container">
             <ul className="categories-list">
@@ -148,17 +169,19 @@ function Layout() {
         </nav>
       </header>
 
-      {/* ================= Conteúdo Principal ================= */}
+      {/* CONTEÚDO PRINCIPAL */}
       <main className="main-content">
+        {/* Outlet = onde as páginas são renderizadas */}
         <Outlet />
       </main>
 
-      {/* ================= Footer ================= */}
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-container">
+
           <div className="footer-main">
 
-            {/* Navegação */}
+            {/* Secção de navegação */}
             <div className="footer-links-group">
               <h4>Navegação</h4>
               <ul>
@@ -169,7 +192,7 @@ function Layout() {
               </ul>
             </div>
 
-            {/* Institucional */}
+            {/* Secção institucional */}
             <div className="footer-links-group">
               <h4>Institucional</h4>
               <ul>
@@ -180,7 +203,7 @@ function Layout() {
               </ul>
             </div>
 
-            {/* Legal */}
+            {/* Secção legal */}
             <div className="footer-links-group">
               <h4>Legal</h4>
               <ul>
@@ -207,6 +230,7 @@ function Layout() {
             </div>
           </div>
 
+          {/* Rodapé final */}
           <div className="footer-bottom">
             © {new Date().getFullYear()} HOOP • Desenvolvido por{" "}
             <a

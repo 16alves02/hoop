@@ -1,13 +1,14 @@
 import { useState, useEffect, createContext, type ReactNode } from "react"
 import type { Produto } from "../data/produtos"
 
-// Tipos internos: um item de carrinho estende `Produto` com quantidade e tamanho
+// Tipo interno para cada item do carrinho
+// Basicamente é um Produto mas com quantidade e opcionalmente tamanho
 interface ItemCarrinho extends Produto {
   quantidade: number
   tamanho?: string
 }
 
-// Interface do contexto do carrinho: funções utilitárias e estado
+// Interface do contexto do carrinho com tudo o que exponho para o resto da app
 interface CarrinhoContextType {
   itens: ItemCarrinho[]
   carrinhoQtd: number
@@ -17,7 +18,8 @@ interface CarrinhoContextType {
   limparCarrinho: () => void
 }
 
-// Criamos um contexto com implementações vazias por defeito (só para tipagem)
+// Crio o contexto com funções vazias só para garantir tipagem
+// Isto evita erros quando algum componente tenta usar o contexto fora do provider
 export const CarrinhoContext = createContext<CarrinhoContextType>({
   itens: [],
   carrinhoQtd: 0,
@@ -27,38 +29,46 @@ export const CarrinhoContext = createContext<CarrinhoContextType>({
   limparCarrinho: () => {},
 })
 
-// Provider que mantém o estado do carrinho e persiste em localStorage
+// Provider que controla todo o estado do carrinho e ainda o guarda no localStorage
 export const CarrinhoProvider = ({ children }: { children: ReactNode }) => {
+
+  // Estado inicial do carrinho, tento puxar do localStorage
+  // Se der erro ou estiver vazio, começo com array vazio
   const [itens, setItens] = useState<ItemCarrinho[]>(() => {
     try {
-      // Tenta restaurar o carrinho do localStorage
       const carrinhoStorage = localStorage.getItem("carrinho")
       return carrinhoStorage ? JSON.parse(carrinhoStorage) : []
     } catch {
-      // Se houver erro de parsing, limpa o item e começa com vazio
+      // Se o JSON estiver marado, limpo e sigo em frente
       localStorage.removeItem("carrinho")
       return []
     }
   })
 
-  // Sempre que `itens` muda, persistimos no localStorage
+  // Sempre que o carrinho muda, guardo no localStorage
+  // Assim o utilizador não perde o carrinho quando fecha o site
   useEffect(() => {
     localStorage.setItem("carrinho", JSON.stringify(itens))
   }, [itens])
 
-  // Soma total de quantidades no carrinho
+  // Quantidade total de itens no carrinho
   const carrinhoQtd = itens.reduce((acc, item) => acc + item.quantidade, 0)
 
-  // Adiciona produto: se já existir (mesmo id e tamanho) incrementa quantidade
+  // Função para adicionar um produto ao carrinho
+  // Se já existir o mesmo produto com o mesmo tamanho, só aumento a quantidade
   const adicionarProduto = (produto: Produto, tamanho?: string) => {
     setItens(prev => {
       const existe = prev.find(p => p.id === produto.id && p.tamanho === tamanho)
+
       if (existe) {
         return prev.map(p =>
-          p.id === produto.id && p.tamanho === tamanho ? { ...p, quantidade: p.quantidade + 1 } : p
+          p.id === produto.id && p.tamanho === tamanho
+            ? { ...p, quantidade: p.quantidade + 1 }
+            : p
         )
       }
-      // Caso não exista, adiciona com quantidade 1
+
+      // Se não existir, adiciono como novo item com quantidade 1
       return [...prev, { ...produto, quantidade: 1, tamanho }]
     })
   }
@@ -68,20 +78,27 @@ export const CarrinhoProvider = ({ children }: { children: ReactNode }) => {
     setItens(prev => prev.filter(p => p.id !== id))
   }
 
-  // Altera a quantidade de um item (não permite < 1)
+  // Altera a quantidade de um item, mas nunca deixo ir abaixo de 1
   const alterarQuantidade = (id: number, quantidade: number) => {
     if (quantidade < 1) return
     setItens(prev => prev.map(p => (p.id === id ? { ...p, quantidade } : p)))
   }
 
-  // Limpa todo o carrinho
+  // Limpa o carrinho todo
   const limparCarrinho = () => {
     setItens([])
   }
 
   return (
     <CarrinhoContext.Provider
-      value={{ itens, carrinhoQtd, adicionarProduto, removerProduto, alterarQuantidade, limparCarrinho }}
+      value={{
+        itens,
+        carrinhoQtd,
+        adicionarProduto,
+        removerProduto,
+        alterarQuantidade,
+        limparCarrinho
+      }}
     >
       {children}
     </CarrinhoContext.Provider>
