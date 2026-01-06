@@ -56,10 +56,15 @@ function ProdutoCard({ produto }: ProdutoCardProps) {
         {produto.equipa && <p className="produto-card-equipa">{produto.equipa}</p>}
         <p className="produto-card-preco">€{produto.preco.toFixed(2)}</p>
 
+        {hasTamanhos ? (
           <Link to={`/produto/${produto.id}`} className="produto-add-btn">
             Comprar
           </Link>
-          
+        ) : (
+          <button className="produto-add-btn" onClick={handleAdicionarCarrinho}>
+            Comprar
+          </button>
+        )}
       </div>
     </article>
   )
