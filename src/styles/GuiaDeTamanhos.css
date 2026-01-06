@@ -1,0 +1,120 @@
+.tamanhos-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: var(--bg-1);
+  color: var(--text-1);
+  font-family: "Inter", sans-serif;
+}
+
+.tamanhos-titulo {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tamanhos-intro {
+  font-size: 1.15rem;
+  color: var(--text-2);
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.tamanhos-bloco {
+  background: var(--bg-2);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+}
+
+.tamanhos-subtitulo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tamanhos-texto {
+  font-size: 1.1rem;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.tabela-scroll {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: var(--radius);
+}
+
+.tamanhos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-3);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-width: 500px;
+}
+
+.tamanhos-tabela th,
+.tamanhos-tabela td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--bg-2);
+  color: var(--text-1);
+  font-size: 1rem;
+}
+
+.tamanhos-tabela th {
+  background: var(--primary);
+  color: #111;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.tamanhos-tabela tr:last-child td {
+  border-bottom: none;
+}
+
+.tamanhos-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--text-2);
+  font-size: 1.1rem;
+}
+
+.tamanhos-lista strong {
+  color: var(--primary);
+}
+
+.tamanhos-nota {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-3);
+  margin-top: 2rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .tamanhos-titulo {
+    font-size: 2.2rem;
+  }
+
+  .tamanhos-subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .tamanhos-page {
+    padding: 3rem 1rem;
+  }
+}

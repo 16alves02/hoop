@@ -1,0 +1,88 @@
+.contacto-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: var(--bg-1);
+  color: var(--text-1);
+  font-family: "Inter", sans-serif;
+}
+
+.contacto-titulo {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+}
+
+.contacto-sucesso {
+  background: var(--bg-2);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+  animation: fadeOut 5s forwards;
+  box-shadow: var(--shadow);
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.contacto-form {
+  background: var(--bg-2);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contacto-form-group {
+  margin-bottom: 1.4rem;
+}
+
+.contacto-input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--bg-3);
+  border-radius: var(--radius-sm);
+  background: var(--bg-3);
+  color: var(--text-1);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contacto-input:focus {
+  border-color: var(--primary);
+  background: var(--bg-2);
+  box-shadow: 0 0 0 4px rgba(242,176,30,0.2);
+  outline: none;
+}
+
+.contacto-form-submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contacto-btn {
+  padding: 1rem 2.5rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #111;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.contacto-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}

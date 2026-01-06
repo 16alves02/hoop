@@ -1,106 +1,227 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom"
+import { useContext, useState } from "react"
+import { AuthContext } from "./context/AuthContextValue"
+import { ToastContext } from "./context/ToastContext"
+import { CarrinhoContext } from "./context/CarrinhoContext"
+import { FavoritosContext } from "./context/FavoritosContext"
+import "./styles/Layout.css"
 
 function Layout() {
-
   const navigate = useNavigate()
+
+  // Contextos
+  const { carrinhoQtd } = useContext(CarrinhoContext)
+  const { quantidadeFavoritos } = useContext(FavoritosContext)
+  const auth = useContext(AuthContext)
+  const { addToast } = useContext(ToastContext)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Função de pesquisa
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-
     e.preventDefault()
+    const termoInput = e.currentTarget.elements.namedItem("termo") as HTMLInputElement
+    const termo = termoInput.value.trim()
 
-    const termo = (e.currentTarget.elements.namedItem("termo") as HTMLInputElement).value
+    if (termo !== "") {
+      navigate(`/pesquisa/${encodeURIComponent(termo)}`)
+      termoInput.value = "" // Limpa o campo após pesquisa
+    }
+  }
 
-    if (termo.trim() !== "") {
-      navigate(`/pesquisa/${termo}`)
+  // Toggle do menu mobile
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(prev => !prev)
+  }
+
+  // Clique no ícone de perfil
+  const handlePerfilClick = () => {
+    if (auth?.isAuthenticated && auth.user) {
+      navigate("/perfil")
+    } else {
+      addToast("Inicia sessão para aceder à tua conta", "info");
+      navigate("/login")
     }
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
+    <div className="layout">
+      {/* ================= Header ================= */}
       <header className="header">
-        <div className="container flex items-center justify-between">
-          <Link to="/">
-            <img src="/img/Logo-HOOP2-transparente.png" alt="HOOP Store" className="logo h-24" />
-          </Link>
-          <Link to="/carrinho" className="cart-icon">
-            <i className="fas fa-shopping-cart text-2xl"></i>
-          </Link>
+        <div className="header-top">
+          <div className="header-container">
+            {/* Logo à esquerda */}
+            <Link to="/" className="header-logo">
+              <img src="/img/Logo-HOOP2.png" alt="HOOP Store" />
+            </Link>
+
+            {/* Pesquisa central (desktop) */}
+            <form className="header-search-desktop" onSubmit={handleSearch}>
+              <input
+                type="text"
+                name="termo"
+                placeholder="Pesquisar jogador, equipa, produto..."
+                aria-label="Pesquisar produtos"
+              />
+              <button type="submit" aria-label="Pesquisar">
+                <i className="fas fa-search"></i>
+              </button>
+            </form>
+
+            {/* Ícones à direita */}
+            <div className="header-icons">
+              {/* Pesquisa mobile */}
+              <form className="header-search-mobile" onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  name="termo"
+                  placeholder="Pesquisar..."
+                  aria-label="Pesquisar produtos"
+                />
+                <button type="submit" aria-label="Pesquisar">
+                  <i className="fas fa-search"></i>
+                </button>
+              </form>
+
+              {/* Favoritos */}
+              <Link to="/favoritos" className="header-icon">
+                <i className="far fa-heart"></i>
+                {quantidadeFavoritos > 0 && (
+                  <span className="header-badge">{quantidadeFavoritos}</span>
+                )}
+              </Link>
+
+              {/* Perfil - com verificação de login */}
+              {auth?.isAuthenticated && auth.user ? (
+                <div className="header-user">
+                  <Link to="/perfil" className="header-icon">
+                    <i className="far fa-user"></i>
+                  </Link>
+                  <span className="header-user-name">Olá, {auth.user.nome.split(" ")[0]}</span>
+                </div>
+              ) : (
+                <button onClick={handlePerfilClick} className="header-icon" aria-label="Iniciar sessão">
+                  <i className="far fa-user"></i>
+                </button>
+              )}
+
+              {/* Carrinho */}
+              <Link to="/carrinho" className="header-icon">
+                <i className="fas fa-shopping-bag"></i>
+                {carrinhoQtd > 0 && (
+                  <span className="header-badge">{carrinhoQtd}</span>
+                )}
+              </Link>
+
+              {/* Botão hamburger para menu mobile */}
+              <button
+                className="header-mobile-toggle"
+                onClick={toggleMobileMenu}
+                aria-label="Abrir menu"
+              >
+                <i className={mobileMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* ================= Menu de Categorias ================= */}
+        <nav className={`header-categories ${mobileMenuOpen ? "open" : ""}`}>
+          <div className="header-container">
+            <ul className="categories-list">
+              <li>
+                <Link to="/produtos" onClick={() => setMobileMenuOpen(false)}>
+                  Coleção Completa
+                </Link>
+              </li>
+              <li>
+                <Link to="/sobre" onClick={() => setMobileMenuOpen(false)}>
+                  Sobre
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacto" onClick={() => setMobileMenuOpen(false)}>
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </header>
 
-      {/* Nav */}
-      <nav className="nav">
-        <div className="container">
-          <ul className="nav-list">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/produtos" className="nav-link">Produtos</Link></li>
-            <li><Link to="/contacto" className="nav-link">Contacto</Link></li>
-            <li><Link to="/sobre" className="nav-link">Sobre</Link></li>
-            <li>
-              <form onSubmit={handleSearch} className="search-form">
-                <input 
-                  type="text" 
-                  name="termo" 
-                  placeholder="Pesquisar jogador ou equipa..." 
-                  className="search-input"
-                  required 
-                />
-                <button type="submit" className="search-btn">🔍</button>
-              </form>
-              {/* Input de pesquisa */}
-            </li>
-          </ul>     
-        </div>
-      </nav>
-
-      {/* Main */}
-      <main className="main flex-1">
-        <div className="container">
-          <Outlet />
-        </div>
+      {/* ================= Conteúdo Principal ================= */}
+      <main className="main-content">
+        <Outlet />
       </main>
 
-      {/* Footer completo */}
+      {/* ================= Footer ================= */}
       <footer className="footer">
-        <div className="container">
-          <div className="footer-links">
-            <div className="footer-column">
-              <h4>LOJA</h4>
+        <div className="footer-container">
+          <div className="footer-main">
+
+            {/* Navegação */}
+            <div className="footer-links-group">
+              <h4>Navegação</h4>
               <ul>
-                <li><a href="/produtos">Produtos</a></li>
-                <li><a href="/pesquisa">Pesquisa</a></li>
-                <li><a href="/sobre">Sobre</a></li>
+                <li><Link to="/">Início</Link></li>
+                <li><Link to="/produtos">Produtos</Link></li>
+                <li><Link to="/sobre">Sobre</Link></li>
+                <li><Link to="/contacto">Contacto</Link></li>
               </ul>
             </div>
-            <div className="footer-column">
-              <h4>APOIO</h4>
+
+            {/* Institucional */}
+            <div className="footer-links-group">
+              <h4>Institucional</h4>
               <ul>
-                <li><a href="/contacto">Contacto</a></li>
-                <li><a href="#">Envios</a></li>
-                <li><a href="#">Devoluções</a></li>
-                <li><a href="#">Tamanhos</a></li>
+                <li><Link to="/faq">Ajuda / FAQ</Link></li>
+                <li><Link to="/guia-de-compra">Guia de Compra</Link></li>
+                <li><Link to="/guia-de-tamanhos">Guia de Tamanhos</Link></li>
+                <li><Link to="/sobre">Sobre a Empresa</Link></li>
               </ul>
             </div>
-            <div className="footer-column">
-              <h4>SEGUIR</h4>
-              <div className="social-icons">
-                <a href="#" target="_blank" className="social-icon">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" target="_blank" className="social-icon">
+
+            {/* Legal */}
+            <div className="footer-links-group">
+              <h4>Legal</h4>
+              <ul>
+                <li><Link to="/termos">Termos e Condições</Link></li>
+                <li><Link to="/privacidade">Política de Privacidade</Link></li>
+                <li><Link to="/legal">Informação Legal</Link></li>
+              </ul>
+            </div>
+
+            {/* Redes sociais */}
+            <div className="footer-social">
+              <h4>Siga-nos</h4>
+              <div className="footer-socials">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#" target="_blank" className="social-icon">
-                  <i className="fab fa-twitter"></i>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-x-twitter"></i>
                 </a>
               </div>
             </div>
           </div>
-          <p className="text-gold text-center mt-20">© 2025 HOOP Store</p>
+
+          <div className="footer-bottom">
+            © {new Date().getFullYear()} HOOP • Desenvolvido por{" "}
+            <a
+              href="https://github.com/16alves02"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leonardo Alves
+            </a>{" "}
+            • All Rights Reserved
+          </div>
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
 export default Layout;

@@ -1,63 +1,1379 @@
 [
   {
     "id": 1,
-    "nome": "Chicago Bulls 1997-98 Michael Jordan Home Finals",
-    "jogador": "Michael Jordan",
-    "equipa": "Chicago Bulls",
-    "preco": 299.99,
-    "imagens": [
-      "img/jordan-front.png",
-      "img/jordan-back.png",
-      "img/jordan-detail.png"
-    ],
-    "descricao": "Camisola autêntica das Finais de 1998. A última dança. Mitchell & Ness Hardwood Classics."
-  },
-  {
-    "id": 2,
-    "nome": "Los Angeles Lakers 2000-01 Kobe Bryant",
-    "jogador": "Kobe Bryant",
-    "equipa": "Los Angeles Lakers",
-    "preco": 319.99,
-    "imagens": [
-      "img/kobe-front.jpg",
-      "img/kobe-back.jpg"
-    ],
-    "descricao": "Tricampeonato. Mamba mentality forever."
-  },
-  {
-    "id": 3,
-    "nome": "Philadelphia 76ers 2000-01 Allen Iverson",
+    "tipo": "camisola",
+    "nome": "Allen Iverson Philadelphia 76ers 2000 All-Star Authentic Jersey",
     "jogador": "Allen Iverson",
     "equipa": "Philadelphia 76ers",
-    "preco": 279.99,
+    "marca": "Mitchell & Ness",
+    "preco": 319.99,
+    "categoria": "NBA Vintage Jerseys",
     "imagens": [
-      "img/iverson-front.jpg",
-      "img/iverson-back.jpg"
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 3.avif",
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 4.webp",
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 5.avif",
+      "/img/mitchell-and-ness/camisolas/ai/Allen Iverson Philadelphia 76ers White 2000 NBA All-Star Game Authentic Jersey - 6.webp"
     ],
-    "descricao": "The Answer. A camisola mais icónica dos anos 2000."
+    "descricao": "Camisola autêntica do All-Star Game 2000. Edição premium Mitchell & Ness com bordados fiéis à original.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["branco", "vermelho", "preto"],
+    "novidade": false,
+    "promocao": true,
+    "reviews": [
+      {"nome": "Tiago M.", "data": "15 Dez 2025", "estrelas": 5, "comentario": "Camisola incrível! Qualidade premium da Mitchell & Ness, exatamente como na foto. Vale cada euro."},
+      {"nome": "João S.", "data": "8 Dez 2025", "estrelas": 5, "comentario": "Perfeita para colecionadores. O bordado do logo antigo dos Sixers é impecável."},
+      {"nome": "Miguel R.", "data": "2 Dez 2025", "estrelas": 4, "comentario": "Muito boa, mas o tamanho M ficou um pouco largo. Recomendo ver a tabela de tamanhos."},
+      {"nome": "André P.", "data": "28 Nov 2025", "estrelas": 5, "comentario": "A melhor camisola vintage que já 'comprei'! Detalhes autênticos do All-Star 2000."},
+      {"nome": "Rui C.", "data": "20 Nov 2025", "estrelas": 5, "comentario": "The Answer em todo o esplendor. Nostalgia pura!"}
+    ]
   },
+
+  {
+    "id": 2,
+    "tipo": "camisola",
+    "nome": "Michael Jordan Chicago Bulls 1985-86 Rookie Authentic Jersey",
+    "jogador": "Michael Jordan",
+    "equipa": "Chicago Bulls",
+    "marca": "Mitchell & Ness",
+    "preco": 349.99,
+    "categoria": "NBA Vintage Jerseys",
+    "imagens": [
+      "/img/mitchell-and-ness/camisolas/jordan/Michael Jordan Chicago Bulls 1985-86 Red Authentic Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/jordan/Michael Jordan Chicago Bulls 1985-86 Red Authentic Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/jordan/Michael Jordan Chicago Bulls 1985-86 Red Authentic Jersey - 3.avif"
+    ],
+    "descricao": "Camisola rookie de Michael Jordan, temporada 1985-86. Edição Hardwood Classics autêntica.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Pedro L.", "data": "10 Jan 2026", "estrelas": 5, "comentario": "GOAT jersey! Qualidade insana, parece saída dos anos 80."},
+      {"nome": "Luís F.", "data": "5 Jan 2026", "estrelas": 5, "comentario": "Peça de coleção obrigatória para qualquer fã dos Bulls."},
+      {"nome": "Ana R.", "data": "28 Dez 2025", "estrelas": 5, "comentario": "Comprei para oferta e foi um sucesso total."}
+    ]
+  },
+
+  {
+    "id": 3,
+    "tipo": "camisola",
+    "nome": "Dwyane Wade Miami Heat 2005-06 Authentic Jersey",
+    "jogador": "Dwyane Wade",
+    "equipa": "Miami Heat",
+    "marca": "Mitchell & Ness",
+    "preco": 299.99,
+    "categoria": "NBA Vintage Jerseys",
+    "imagens": [
+      "/img/mitchell-and-ness/camisolas/dwade/Dwyane Wade Miami Heat 2005-06 Red Authentic Player Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/dwade/Dwyane Wade Miami Heat 2005-06 Red Authentic Player Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/dwade/Dwyane Wade Miami Heat 2005-06 Red Authentic Player Jersey - 3.webp",
+      "/img/mitchell-and-ness/camisolas/dwade/Dwyane Wade Miami Heat 2005-06 Red Authentic Player Jersey - 4.webp"
+    ],
+    "descricao": "Camisola autêntica da época 2005-06 de Dwyane Wade. Detalhes premium e corte clássico.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["vermelho", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+
   {
     "id": 4,
-    "nome": "Boston Celtics 1985-86 Larry Bird",
-    "jogador": "Larry Bird",
-    "equipa": "Boston Celtics",
-    "preco": 259.99,
+    "tipo": "camisola",
+    "nome": "Kyrie Irving Cleveland Cavaliers 2011-12 Authentic Jersey",
+    "jogador": "Kyrie Irving",
+    "equipa": "Cleveland Cavaliers",
+    "marca": "Mitchell & Ness",
+    "preco": 279.99,
+    "categoria": "NBA Vintage Jerseys",
     "imagens": [
-      "img/bird-front.jpg",
-      "img/bird-back.jpg"
+      "/img/mitchell-and-ness/camisolas/kai/Kyrie Irving Cleveland Cavaliers 2011-12 Navy Authentic Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/kai/Kyrie Irving Cleveland Cavaliers 2011-12 Navy Authentic Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/kai/Kyrie Irving Cleveland Cavaliers 2011-12 Navy Authentic Jersey - 3.webp",
+      "/img/mitchell-and-ness/camisolas/kai/Kyrie Irving Cleveland Cavaliers 2011-12 Navy Authentic Jersey - 4.avif"
     ],
-    "descricao": "Larry Legend #33."
+    "descricao": "Camisola autêntica da época de rookie de Kyrie Irving. Corte clássico e cores históricas dos Cavs.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul", "dourado"],
+    "novidade": false,
+    "promocao": false
   },
+
   {
     "id": 5,
-    "nome": "Golden State Warriors 2016-17 Stephen Curry",
-    "jogador": "Stephen Curry",
-    "equipa": "Golden State Warriors",
-    "preco": 289.99,
+    "tipo": "camisola",
+    "nome": "Kevin Durant Seattle SuperSonics 2007-08 Authentic Jersey",
+    "jogador": "Kevin Durant",
+    "equipa": "Seattle SuperSonics",
+    "marca": "Mitchell & Ness",
+    "preco": 329.99,
+    "categoria": "NBA Vintage Jerseys",
     "imagens": [
-      "img/curry-front.jpg",
-      "img/curry-back.jpg"
+      "/img/mitchell-and-ness/camisolas/kd/Kevin Durant Seattle SuperSonics 2007-08 White Authentic Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/kd/Kevin Durant Seattle SuperSonics 2007-08 White Authentic Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/kd/Kevin Durant Seattle SuperSonics 2007-08 White Authentic Jersey - 3.avif",
+      "/img/mitchell-and-ness/camisolas/kd/Kevin Durant Seattle SuperSonics 2007-08 White Authentic Jersey - 4.avif"
     ],
-    "descricao": "The baby-faced assassin."
+    "descricao": "Camisola autêntica da época rookie de Kevin Durant nos Seattle SuperSonics.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["branco", "verde", "amarelo"],
+    "novidade": false,
+    "promocao": false
+  },
+
+  {
+    "id": 6,
+    "tipo": "camisola",
+    "nome": "LeBron James Cleveland Cavaliers 2008-09 Authentic Jersey",
+    "jogador": "LeBron James",
+    "equipa": "Cleveland Cavaliers",
+    "marca": "Mitchell & Ness",
+    "preco": 329.99,
+    "categoria": "NBA Vintage Jerseys",
+    "imagens": [
+      "/img/mitchell-and-ness/camisolas/lebron/LeBron James Cleveland Cavaliers 2008-09 Navy Authentic Jersey - 1.jpg",
+      "/img/mitchell-and-ness/camisolas/lebron/LeBron James Cleveland Cavaliers 2008-09 Navy Authentic Jersey - 2.jpg"
+    ],
+    "descricao": "Camisola autêntica da época 2008-09 de LeBron James. Corte premium e detalhes clássicos dos Cavs.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul", "dourado"],
+    "novidade": false,
+    "promocao": false
+  },
+
+  {
+    "id": 7,
+    "tipo": "camisola",
+    "nome": "Vince Carter Toronto Raptors 1998-99 Authentic Jersey",
+    "jogador": "Vince Carter",
+    "equipa": "Toronto Raptors",
+    "marca": "Mitchell & Ness",
+    "preco": 329.99,
+    "categoria": "NBA Vintage Jerseys",
+    "imagens": [
+      "/img/mitchell-and-ness/camisolas/vince-carter/Vince Carter Toronto Raptors 1998-99 Purple Authentic Jersey - 1.avif",
+      "/img/mitchell-and-ness/camisolas/vince-carter/Vince Carter Toronto Raptors 1998-99 Purple Authentic Jersey - 2.avif",
+      "/img/mitchell-and-ness/camisolas/vince-carter/Vince Carter Toronto Raptors 1998-99 Purple Authentic Jersey - 3.avif"
+    ],
+    "descricao": "Camisola icónica dos Raptors usada por Vince Carter na época 1998-99.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["roxo", "preto", "vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 8,
+    "tipo": "camisola",
+    "nome": "Kobe Bryant Los Angeles Lakers Authentic Icon Edition",
+    "jogador": "Kobe Bryant",
+    "equipa": "Los Angeles Lakers",
+    "marca": "Nike",
+    "preco": 249.99,
+    "categoria": "NBA Jerseys",
+    "imagens": [
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-0.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-1.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-2.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-3.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-4.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-5.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-6.webp",
+      "/img/nike/camisolas/lakers/kobe-bryant/camisola-nike-los-angeles-lakers-authentic-icon-edition-kobe-bryant-amarelo-7.webp"
+    ],
+    "descricao": "Camisola Authentic Icon Edition dos Los Angeles Lakers usada por Kobe Bryant. Construção premium Nike, tecido respirável e detalhes dourados que celebram a lenda Mamba.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["amarelo", "roxo", "preto"],
+    "novidade": false,
+    "promocao": true,
+    "reviews": [
+      {
+        "nome": "Carlos D.",
+        "data": "3 Jan 2026",
+        "estrelas": 5,
+        "comentario": "Homenagem perfeita ao Black Mamba. Qualidade Nike top."
+      },
+      {
+        "nome": "Mariana G.",
+        "data": "28 Dez 2025",
+        "estrelas": 5,
+        "comentario": "Emocionante usar. Os detalhes dourados são brutais."
+      },
+      {
+        "nome": "Rafael P.",
+        "data": "12 Dez 2025",
+        "estrelas": 4,
+        "comentario": "O corte é um pouco largo, mas a qualidade é absurda."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "tipo": "sapatilhas",
+    "nome": "Nike Kobe IX Elite Low EM Protro Black/University Gold",
+    "jogador": "Kobe Bryant",
+    "marca": "Nike",
+    "preco": 229.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-0.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-1.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-2.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-3.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-4.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-5.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-6.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-black-university-gold-white-7.webp"
+    ],
+    "descricao": "A Kobe IX Elite Low EM Protro combina leveza, estabilidade e um look agressivo. A versão Protro moderniza o modelo clássico com amortecimento atualizado e tração de elite.",
+    "genero": "unisex",
+    "tamanhos": ["38", "39", "40", "41", "42", "43", "44", "45"],
+    "cores": ["preto", "dourado"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Ricardo L.", "data": "4 Jan 2026", "estrelas": 5, "comentario": "As melhores sapatilhas que já usei no campo! O amortecimento é brutal."},
+      {"nome": "Pedro A.", "data": "30 Dez 2025", "estrelas": 5, "comentario": "Mamba mentality no pé. Leves e com grip perfeito."}
+    ]
+  },
+  {
+    "id": 10,
+    "tipo": "sapatilhas",
+    "nome": "Nike Kobe IX Elite Low EM Protro White/Court Purple",
+    "jogador": "Kobe Bryant",
+    "marca": "Nike",
+    "preco": 229.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-0.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-1.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-2.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-3.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-4.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-5.webp",
+      "/img/nike/sapatilhas/kobe/sapatilhas-nike-kobe-ix-elite-low-em-protro-white-court-purple-white-6.webp"
+    ],
+    "descricao": "A colorway White/Court Purple celebra a herança dos Lakers com um toque clean e elegante. Ideal para quem procura performance e estilo.",
+    "genero": "unisex",
+    "tamanhos": ["38", "39", "40", "41", "42", "43", "44"],
+    "cores": ["branco", "roxo"],
+    "novidade": true,
+    "promocao": false
+  },
+
+  {
+    "id": 11,
+    "tipo": "sapatilhas",
+    "nome": "Nike LeBron 23 'From This Point Forward'",
+    "jogador": "LeBron James",
+    "marca": "Nike",
+    "preco": 199.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-0.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-1.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-2.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-3.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-4.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-5.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-23-from-this-point-forward-white-stadium-green-lt-smoke-grey-black-6.webp"
+    ],
+    "descricao": "A LeBron 23 combina potência e conforto com um design moderno. Criada para atletas que precisam de estabilidade e resposta imediata.",
+    "genero": "unisex",
+    "tamanhos": ["40", "41", "42", "43", "44", "45", "46"],
+    "cores": ["branco", "verde", "cinzento"],
+    "novidade": true,
+    "promocao": false
+  },
+  {
+    "id": 12,
+    "tipo": "sapatilhas",
+    "nome": "Nike LeBron NXXT Gen 'Isus'",
+    "jogador": "LeBron James",
+    "marca": "Nike",
+    "preco": 119.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-nxxt-genisus-qs-branco-0.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-nxxt-genisus-qs-branco-1.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-nxxt-genisus-qs-branco-2.webp",
+      "/img/nike/sapatilhas/lebron/sapatillas-nike-lebron-nxxt-genisus-qs-branco-3.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-nxxt-genisus-qs-branco-4.webp",
+      "/img/nike/sapatilhas/lebron/sapatilhas-nike-lebron-nxxt-genisus-qs-branco-5.webp"
+    ],
+    "descricao": "A NXXT Gen oferece leveza e tração agressiva, ideal para jogadores rápidos. A colorway 'Isus' destaca-se pelo visual clean e moderno. Aproveita o Desconto!",
+    "genero": "unisex",
+    "tamanhos": ["39", "40", "41", "42", "43", "44"],
+    "cores": ["branco", "preto"],
+    "novidade": false,
+    "promocao": true
+  },
+  {
+    "id": 13,
+    "tipo": "sapatilhas",
+    "nome": "Nike Precision 7 White",
+    "marca": "Nike",
+    "preco": 89.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-0.webp",
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-1.webp",
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-2.webp",
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-3.webp",
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-4.webp",
+      "/img/nike/sapatilhas/precision/sapatilhas-nike-precision-7-branco-5.webp"
+    ],
+    "descricao": "A Precision 7 é uma opção leve e acessível para jogadores que procuram estabilidade e conforto em campo.",
+    "genero": "unisex",
+    "tamanhos": ["38", "39", "40", "41", "42", "43", "44"],
+    "cores": ["branco"],
+    "novidade": true,
+    "promocao": false
+  },
+  {
+    "id": 14,
+    "tipo": "sapatilhas",
+    "nome": "Jordan Tatum 3 Tie-Dye",
+    "jogador": "Jayson Tatum",
+    "marca": "Jordan",
+    "preco": 189.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-0.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-1.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-2.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-3.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-4.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-5.webp",
+      "/img/jordan/sapatilhas/tatum/sapatilhas-jordan-tatum-3-tie-dye-university-blue-camellia-pale-ivory-6.webp"
+    ],
+    "descricao": "A Jordan Tatum 3 Tie-Dye combina leveza, estabilidade e um design vibrante inspirado na energia criativa de Jayson Tatum. Ideal para jogadores rápidos que procuram resposta imediata e tração agressiva.",
+    "genero": "unisex",
+    "tamanhos": ["38", "39", "40", "41", "42", "43", "44", "45"],
+    "cores": ["azul", "rosa", "branco"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Bruno T.", "data": "2 Jan 2026", "estrelas": 5, "comentario": "Visual insano e super confortáveis para jogar."},
+      {"nome": "Inês M.", "data": "26 Dez 2025", "estrelas": 5, "comentario": "As cores Tie-Dye são ainda mais bonitas ao vivo!"},
+      {"nome": "Daniel F.", "data": "18 Dez 2025", "estrelas": 4, "comentario": "Muito leves, mas o fit é um pouco justo."}
+    ]
+  },
+
+  {
+    "id": 15,
+    "tipo": "sapatilhas",
+    "nome": "Jordan Zion 3 Z-3D",
+    "jogador": "Zion Williamson",
+    "marca": "Jordan",
+    "preco": 159.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-0.webp",
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-1.webp",
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-2.webp",
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-3.webp",
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-4.webp",
+      "/img/jordan/sapatilhas/zion/sapatilhas-jordan-zion-3-z-3d-basketball-grey-black-flash-crimson-5.webp"
+    ],
+    "descricao": "A Jordan Zion 3 Z-3D foi criada para suportar a força explosiva de Zion Williamson. Tração multidirecional, amortecimento firme e um design 3D agressivo tornam este modelo perfeito para atletas potentes.",
+    "genero": "unisex",
+    "tamanhos": ["39", "40", "41", "42", "43", "44", "45"],
+    "cores": ["cinzento", "preto", "vermelho neon"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Hugo R.", "data": "3 Jan 2026", "estrelas": 5, "comentario": "Estabilidade absurda. Dá confiança em cada salto."},
+      {"nome": "Marta L.", "data": "22 Dez 2025", "estrelas": 4, "comentario": "Muito robustas, perfeitas para quem joga no garrafão."}
+    ]
+  },
+  {
+    "id": 16,
+    "tipo": "sapatilhas",
+    "nome": "Adidas Harden Vol. 9 Flamingo Pink",
+    "jogador": "James Harden",
+    "marca": "Adidas",
+    "preco": 169.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-0.webp",
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-1.webp",
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-2.webp",
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-3.webp",
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-4.webp",
+      "/img/adidas/sapatilhas/harden/sapatilhas-adidas-harden-volume-9-flamingo-pink-beam-pink-lucid-pink-beam-pink-5.webp"
+    ],
+    "descricao": "A Harden Vol. 9 Flamingo Pink combina Boost responsivo com um design ousado e vibrante. Criada para step-backs explosivos e máxima estabilidade lateral.",
+    "genero": "unisex",
+    "tamanhos": ["39", "40", "41", "42", "43", "44", "45", "46"],
+    "cores": ["rosa", "preto"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Diogo H.", "data": "1 Jan 2026", "estrelas": 5, "comentario": "Boost incrível, perfeito para step-back!"},
+      {"nome": "Fábio N.", "data": "20 Dez 2025", "estrelas": 4, "comentario": "Cor ousada, mas o conforto compensa tudo."},
+      {"nome": "Sara P.", "data": "10 Dez 2025", "estrelas": 5, "comentario": "Super estáveis e muito confortáveis. A cor é linda ao vivo."}
+    ]
+  },
+
+  {
+    "id": 17,
+    "tipo": "sapatilhas",
+    "nome": "Adidas Dame X Criança Zero Met Core Black Court Green",
+    "jogador": "Damian Lillard",
+    "marca": "Adidas",
+    "preco": 89.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-0.webp",
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-1.webp",
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-2.webp",
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-3.webp",
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-4.webp",
+      "/img/adidas/sapatilhas/dame/sapatilhas-adidas-dame-x-crianca-zero-met-core-black-court-green-5.webp"
+    ],
+    "descricao": "A Dame X Criança oferece conforto, durabilidade e estilo inspirado em Damian Lillard. Ideal para jovens atletas que querem jogar com confiança.",
+    "genero": "criança",
+    "tamanhos": ["33", "34", "35", "36", "37", "38"],
+    "cores": ["preto", "verde"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Rita M.", "data": "5 Jan 2026", "estrelas": 5, "comentario": "O meu filho adorou! Muito confortáveis e resistentes."},
+      {"nome": "João P.", "data": "22 Dez 2025", "estrelas": 4, "comentario": "Boa tração e ótimo preço para sapatilhas de criança."}
+    ]
+  },
+  {
+    "id": 18,
+    "tipo": "sapatilhas",
+    "nome": "Puma MB.05 Rick & Morty 'Rickie Orange / Electric Peppermint'",
+    "jogador": "LaMelo Ball",
+    "marca": "Puma",
+    "preco": 179.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-0.webp",
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-1.webp",
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-2.webp",
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-3.webp",
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-4.webp",
+      "/img/puma/sapatilhas/lamelo/sapatilhas-puma-mb.05-rick-morty-rickie-orange-electric-peppermint-5.webp"
+    ],
+    "descricao": "A Puma MB.05 Rick & Morty combina o estilo irreverente de LaMelo Ball com o universo caótico da série. Leve, responsiva e com um design assimétrico que se destaca em qualquer campo.",
+    "genero": "unisex",
+    "tamanhos": ["39", "40", "41", "42", "43", "44", "45"],
+    "cores": ["laranja", "verde menta", "preto"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Guilherme S.", "data": "4 Jan 2026", "estrelas": 5, "comentario": "Design brutal! Muito confortáveis e super leves."},
+      {"nome": "Leonor A.", "data": "27 Dez 2025", "estrelas": 5, "comentario": "As cores são ainda mais vivas ao vivo. Adorei!"},
+      {"nome": "Tomás V.", "data": "18 Dez 2025", "estrelas": 4, "comentario": "Boa tração e ótimo suporte lateral. Recomendo."}
+    ]
+  },
+  {
+    "id": 19,
+    "tipo": "sapatilhas",
+    "nome": "Under Armour Curry Series 7 'Cotton Candy'",
+    "jogador": "Stephen Curry",
+    "marca": "Under Armour",
+    "preco": 159.99,
+    "categoria": "Performance Basketball",
+    "imagens": [
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-0.webp",
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-1.webp",
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-2.webp",
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-3.webp",
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-4.webp",
+      "/img/under_armour/sapatilhas/curry/sapatilhas-under-armour-curry-series-7-cotton-candy-horizon-blue-aero-pink-stream-5.webp"
+    ],
+    "descricao": "A Curry Series 7 'Cotton Candy' combina leveza, estabilidade e resposta imediata — tudo o que define o estilo de jogo de Stephen Curry. A colorway vibrante mistura tons pastel para um visual único dentro e fora do campo.",
+    "genero": "unisex",
+    "tamanhos": ["39", "40", "41", "42", "43", "44", "45"],
+    "cores": ["azul claro", "rosa", "branco"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Eduardo M.", "data": "3 Jan 2026", "estrelas": 5, "comentario": "Leves e super responsivas. Perfeitas para quem joga rápido como o Curry."},
+      {"nome": "Patrícia L.", "data": "27 Dez 2025", "estrelas": 4, "comentario": "Muito confortáveis, mas o fit é um pouco estreito."},
+      {"nome": "Rui S.", "data": "15 Dez 2025", "estrelas": 5, "comentario": "A cor é brutal ao vivo. Excelente tração!"}
+    ]
+  },
+  {
+    "id": 20,
+    "tipo": "equipamento",
+    "nome": "Equipamento Principal FPB 2024 - Vermelho (Homem)",
+    "marca": "FPB",
+    "preco": 89.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/principal/homem/Equipamento Principal FPB 24 - Vermelho - 1.png",
+      "/img/fpb/equipamentos-oficiais/principal/homem/Equipamento Principal FPB 24 - Vermelho - 2.png",
+      "/img/fpb/equipamentos-oficiais/principal/homem/Equipamento Principal FPB 24 - Vermelho - 3.png",
+      "/img/fpb/equipamentos-oficiais/principal/homem/Equipamento Principal FPB 24 - Vermelho - 4.png",
+      "/img/fpb/equipamentos-oficiais/principal/homem/Equipamento Principal FPB 24 - Vermelho - 5.png"
+    ],
+    "descricao": "Equipamento oficial principal da Seleção Portuguesa de Basquetebol 2024. Conjunto completo com camisola e calção, tecido respirável e corte atlético.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["vermelho", "branco"],
+    "novidade": false,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Nuno F.", "data": "18 Dez 2025", "estrelas": 5, "comentario": "Orgulho nacional! Qualidade excelente e o vermelho fica brutal."},
+      {"nome": "Gonçalo P.", "data": "12 Dez 2025", "estrelas": 5, "comentario": "Finalmente equipamento oficial à venda. Tecido respirável."}
+    ]
+  },
+  {
+    "id": 21,
+    "tipo": "equipamento",
+    "nome": "Equipamento Principal FPB 2024 - Vermelho (Mulher)",
+    "marca": "FPB",
+    "preco": 89.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/principal/mulher/Equipamento Principal FPB 24 - Vermelho - 1.png",
+      "/img/fpb/equipamentos-oficiais/principal/mulher/Equipamento Principal FPB 24 - Vermelho - 2.png",
+      "/img/fpb/equipamentos-oficiais/principal/mulher/Equipamento Principal FPB 24 - Vermelho - 3.png",
+      "/img/fpb/equipamentos-oficiais/principal/mulher/Equipamento Principal FPB 24 - Vermelho - 4.png",
+      "/img/fpb/equipamentos-oficiais/principal/mulher/Equipamento Principal FPB 24 - Vermelho - 5.png"
+    ],
+    "descricao": "Versão feminina do equipamento principal FPB 2024. Corte ajustado, tecido leve e detalhes oficiais da Seleção.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L", "XL"],
+    "cores": ["vermelho", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 22,
+    "tipo": "equipamento",
+    "nome": "Equipamento Principal FPB 2024 - Vermelho (Criança)",
+    "marca": "FPB",
+    "preco": 69.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/principal/crianca/Equipamento Principal FPB 24 - Vermelho - 1.png",
+      "/img/fpb/equipamentos-oficiais/principal/crianca/Equipamento Principal FPB 24 - Vermelho - 2.png",
+      "/img/fpb/equipamentos-oficiais/principal/crianca/Equipamento Principal FPB 24 - Vermelho - 3.png",
+      "/img/fpb/equipamentos-oficiais/principal/crianca/Equipamento Principal FPB 24 - Vermelho - 4.png",
+      "/img/fpb/equipamentos-oficiais/principal/crianca/Equipamento Principal FPB 24 - Vermelho - 5.png"
+    ],
+    "descricao": "Equipamento oficial FPB 2024 para criança. Confortável, resistente e perfeito para treinos e jogos escolares.",
+    "genero": "criança",
+    "tamanhos": ["6A", "8A", "10A", "12A", "14A"],
+    "cores": ["vermelho", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 23,
+    "tipo": "equipamento",
+    "nome": "Equipamento Alternativo FPB 2024 - Branco (Homem)",
+    "marca": "FPB",
+    "preco": 89.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/alternativo/homem/Equipamento Alternativo FPB 24 - Branco - 1.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/homem/Equipamento Alternativo FPB 24 - Branco - 2.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/homem/Equipamento Alternativo FPB 24 - Branco - 3.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/homem/Equipamento Alternativo FPB 24 - Branco - 4.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/homem/Equipamento Alternativo FPB 24 - Branco - 5.png"
+    ],
+    "descricao": "Equipamento alternativo oficial da Seleção Portuguesa de Basquetebol 2024. Conjunto branco com detalhes vermelhos, tecido leve e respirável.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["branco", "vermelho"],
+    "novidade": false,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Rui M.", "data": "10 Dez 2025", "estrelas": 5, "comentario": "Muito confortável e com excelente qualidade."},
+      {"nome": "André C.", "data": "2 Dez 2025", "estrelas": 4, "comentario": "O corte é ligeiramente justo, mas o tecido é top."}
+    ]
+  },
+  {
+    "id": 24,
+    "tipo": "equipamento",
+    "nome": "Equipamento Alternativo FPB 2024 - Branco (Mulher)",
+    "marca": "FPB",
+    "preco": 89.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/alternativo/mulher/Equipamento Alternativo FPB 24 - Branco - 1.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/mulher/Equipamento Alternativo FPB 24 - Branco - 2.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/mulher/Equipamento Alternativo FPB 24 - Branco - 3.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/mulher/Equipamento Alternativo FPB 24 - Branco - 4.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/mulher/Equipamento Alternativo FPB 24 - Branco - 5.png"
+    ],
+    "descricao": "Versão feminina do equipamento alternativo FPB 2024. Corte ajustado, tecido leve e detalhes oficiais da Seleção.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L", "XL"],
+    "cores": ["branco", "vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 25,
+    "tipo": "equipamento",
+    "nome": "Equipamento Alternativo FPB 2024 - Branco (Criança)",
+    "marca": "FPB",
+    "preco": 69.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/alternativo/crianca/Equipamento Alternativo FPB 24 - Branco - 1.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/crianca/Equipamento Alternativo FPB 24 - Branco - 2.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/crianca/Equipamento Alternativo FPB 24 - Branco - 3.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/crianca/Equipamento Alternativo FPB 24 - Branco - 4.png",
+      "/img/fpb/equipamentos-oficiais/alternativo/crianca/Equipamento Alternativo FPB 24 - Branco - 5.png"
+    ],
+    "descricao": "Equipamento alternativo FPB 2024 para criança. Confortável, resistente e perfeito para treinos e jogos escolares.",
+    "genero": "criança",
+    "tamanhos": ["6A", "8A", "10A", "12A", "14A"],
+    "cores": ["branco", "vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 26,
+    "tipo": "equipamento",
+    "nome": "Camisola de Aquecimento FPB 2024",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/aquecimento/Camisola Aquecimento FPB 24 - 1.png",
+      "/img/fpb/equipamentos-oficiais/aquecimento/Camisola Aquecimento FPB 24 - 2.png"
+    ],
+    "descricao": "Camisola oficial de aquecimento da Seleção Portuguesa de Basquetebol 2024. Tecido leve e respirável, ideal para pré-jogo e treinos.",
+    "genero": "unisex",
+    "tamanhos": ["S", "M", "L", "XL", "XXL"],
+    "cores": ["vermelho", "branco"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Marco A.", "data": "3 Jan 2026", "estrelas": 5, "comentario": "Muito confortável e leve. Perfeita para treinar."},
+      {"nome": "Sérgio D.", "data": "20 Dez 2025", "estrelas": 4, "comentario": "Boa qualidade, mas podia ser um pouco mais larga."}
+    ]
+  },
+  {
+    "id": 27,
+    "tipo": "equipamento",
+    "nome": "Equipamento de Treino Reversível FPB 2024",
+    "marca": "FPB",
+    "preco": 59.99,
+    "categoria": "Seleção Portugal",
+    "imagens": [
+      "/img/fpb/equipamentos-oficiais/treino/Reversível FPB 24 - 1.png",
+      "/img/fpb/equipamentos-oficiais/treino/Reversível FPB 24 - 2.png",
+      "/img/fpb/equipamentos-oficiais/treino/Reversível FPB 24 - 3.png",
+      "/img/fpb/equipamentos-oficiais/treino/Reversível FPB 24 - 4.png"
+    ],
+    "descricao": "Equipamento reversível oficial FPB 2024. Dois lados — vermelho e branco — ideal para treinos, jogos internos e torneios escolares.",
+    "genero": "unisex",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["vermelho", "branco"],
+    "novidade": true,
+    "promocao": false,
+    "reviews": [
+      {"nome": "Tiago R.", "data": "12 Jan 2026", "estrelas": 5, "comentario": "Muito prático para treinos. Excelente qualidade."}
+    ]
+  },
+  {
+    "id": 28,
+    "tipo": "lifestyle",
+    "nome": "Bermuda FPB 24 - Preto (Homem)",
+    "marca": "FPB",
+    "preco": 34.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Bermuda FPB 24 - Preto.png"
+    ],
+    "descricao": "Bermuda FPB 24 em preto, confortável e ideal para treinos leves ou uso diário.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 29,
+    "tipo": "lifestyle",
+    "nome": "Calça de Treino FPB 24 - Azul (Homem)",
+    "marca": "FPB",
+    "preco": 44.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Calça de Treino FPB 24 - Azul.png"
+    ],
+    "descricao": "Calça de treino FPB 24 em azul, com corte atlético e tecido confortável.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 30,
+    "tipo": "lifestyle",
+    "nome": "Casaco Fato de Treino FPB 24 - Verde (Homem)",
+    "marca": "FPB",
+    "preco": 54.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Casaco Fato de Treino FPB 24 - Verde - 1.png",
+      "/img/fpb/lifestyle/homem/Casaco Fato de Treino FPB 24 - Verde - 2.png"
+    ],
+    "descricao": "Casaco de treino FPB 24 em verde, com fecho completo e tecido leve.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 31,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Azul (Homem)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Azul - 1.png",
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Azul - 2.png"
+    ],
+    "descricao": "Polo FPB 24 azul, elegante e confortável, ideal para eventos e uso casual.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 32,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Verde (Homem)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Verde - 1.png",
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Verde - 2.png"
+    ],
+    "descricao": "Polo FPB 24 verde, com corte moderno e tecido respirável.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 33,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Vermelho (Homem)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Vermelho - 1.png",
+      "/img/fpb/lifestyle/homem/Polo FPB 24 - Vermelho - 2.png"
+    ],
+    "descricao": "Polo FPB 24 vermelho, ideal para representar as cores da Seleção.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 34,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Azul (Homem)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Sweat FPB 24 - Azul.png"
+    ],
+    "descricao": "Sweat FPB 24 azul, quente e confortável, ideal para dias frios.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 35,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Verde (Homem)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Sweat FPB 24 - Verde.png"
+    ],
+    "descricao": "Sweat FPB 24 verde, com interior suave e corte moderno.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 36,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Vermelho (Homem)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/Sweat FPB 24 - Vermelho.png"
+    ],
+    "descricao": "Sweat FPB 24 vermelho, perfeita para representar as cores nacionais.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 37,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Azul (Homem)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/T-Shirt FPB 24 - Azul.png"
+    ],
+    "descricao": "T-shirt FPB 24 azul, leve e confortável para uso diário.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 38,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Verde (Homem)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/T-Shirt FPB 24 - Verde.png"
+    ],
+    "descricao": "T-shirt FPB 24 verde, ideal para treinos leves ou uso casual.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 39,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Vermelho (Homem)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/homem/T-Shirt FPB 24 - Vermelho.png"
+    ],
+    "descricao": "T-shirt FPB 24 vermelha, com design simples e confortável.",
+    "genero": "homem",
+    "tamanhos": ["S", "M", "L", "XL"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 40,
+    "tipo": "lifestyle",
+    "nome": "Bermuda FPB 24 - Preto (Mulher)",
+    "marca": "FPB",
+    "preco": 34.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Bermuda FPB 24 - Preto.png"
+    ],
+    "descricao": "Bermuda FPB 24 preta, confortável e versátil, ideal para treinos leves ou uso diário.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 41,
+    "tipo": "lifestyle",
+    "nome": "Calça de Treino FPB 24 - Azul (Mulher)",
+    "marca": "FPB",
+    "preco": 44.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Calça de Treino FPB 24 - Azul.png"
+    ],
+    "descricao": "Calça de treino FPB 24 azul, com corte feminino e tecido confortável para treinos e uso casual.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 42,
+    "tipo": "lifestyle",
+    "nome": "Casaco Fato de Treino FPB 24 - Verde (Mulher)",
+    "marca": "FPB",
+    "preco": 54.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Casaco Fato de Treino FPB 24 - Verde - 1.png",
+      "/img/fpb/lifestyle/mulher/Casaco Fato de Treino FPB 24 - Verde - 2.png"
+    ],
+    "descricao": "Casaco de treino FPB 24 verde, com corte feminino, fecho completo e tecido leve.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 43,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Azul (Mulher)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Azul - 1.png",
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Azul - 2.png"
+    ],
+    "descricao": "Polo FPB 24 azul, elegante e confortável, com corte feminino moderno.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 44,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Verde (Mulher)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Verde - 1.png",
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Verde - 2.png"
+    ],
+    "descricao": "Polo FPB 24 verde, com tecido respirável e corte feminino.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 45,
+    "tipo": "lifestyle",
+    "nome": "Polo FPB 24 - Vermelho (Mulher)",
+    "marca": "FPB",
+    "preco": 39.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Vermelho - 1.png",
+      "/img/fpb/lifestyle/mulher/Polo FPB 24 - Vermelho - 2.png"
+    ],
+    "descricao": "Polo FPB 24 vermelho, ideal para representar as cores da Seleção com estilo.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 46,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Azul (Mulher)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Sweat FPB 24 - Azul.png"
+    ],
+    "descricao": "Sweat FPB 24 azul, quente e confortável, com corte feminino.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 47,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Verde (Mulher)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Sweat FPB 24 - Verde.png"
+    ],
+    "descricao": "Sweat FPB 24 verde, com interior suave e corte feminino moderno.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 48,
+    "tipo": "lifestyle",
+    "nome": "Sweat FPB 24 - Vermelho (Mulher)",
+    "marca": "FPB",
+    "preco": 49.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/Sweat FPB 24 - Vermelho.png"
+    ],
+    "descricao": "Sweat FPB 24 vermelha, perfeita para representar as cores nacionais.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 49,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Azul (Mulher)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/T-Shirt FPB 24 - Azul.png"
+    ],
+    "descricao": "T-shirt FPB 24 azul, leve e confortável, com corte feminino.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["azul"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 50,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Verde (Mulher)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/T-Shirt FPB 24 - Verde.png"
+    ],
+    "descricao": "T-shirt FPB 24 verde, ideal para treinos leves ou uso casual.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["verde"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 51,
+    "tipo": "lifestyle",
+    "nome": "T-Shirt FPB 24 - Vermelho (Mulher)",
+    "marca": "FPB",
+    "preco": 24.99,
+    "categoria": "FPB Lifestyle",
+    "imagens": [
+      "/img/fpb/lifestyle/mulher/T-Shirt FPB 24 - Vermelho.png"
+    ],
+    "descricao": "T-shirt FPB 24 vermelha, com design simples e confortável.",
+    "genero": "mulher",
+    "tamanhos": ["XS", "S", "M", "L"],
+    "cores": ["vermelho"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 52,
+    "tipo": "acessorio",
+    "nome": "Mochila Nike Varsity Elite 32L - Black",
+    "marca": "Nike",
+    "preco": 89.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32-l-black-black-metallic-silver-0.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32-l-black-black-metallic-silver-1.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32-l-black-black-metallic-silver-2.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32-l-black-black-metallic-silver-3.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32-l-black-black-metallic-silver-4.webp"
+    ],
+    "descricao": "Mochila Nike Varsity Elite 32L em preto, com compartimento para bola, sapatilhas e equipamento. Ideal para treinos e jogos.",
+    "genero": "unisex",
+    "cores": ["preto", "prateado"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 53,
+    "tipo": "acessorio",
+    "nome": "Mochila Nike Varsity Elite 32L - Iron Grey",
+    "marca": "Nike",
+    "preco": 89.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-0.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-1.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-2.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-3.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-4.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-5.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-6.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-7.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-iron-grey-black-black-8.webp"
+    ],
+    "descricao": "Versão Iron Grey da mochila Nike Varsity Elite 32L. Robusta, espaçosa e perfeita para atletas.",
+    "genero": "unisex",
+    "cores": ["cinzento", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 54,
+    "tipo": "acessorio",
+    "nome": "Mochila Nike Varsity Elite 32L - White/Gold",
+    "marca": "Nike",
+    "preco": 89.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-0.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-1.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-2.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-3.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-4.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-5.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-6.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-7.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-8.webp",
+      "/img/nike/acessorios/mochilas-sacos/mochila-nike-varsity-elite-32l-white-black-metallic-gold-9.webp"
+    ],
+    "descricao": "Mochila Nike Varsity Elite 32L White/Gold. Design premium com detalhes metálicos dourados.",
+    "genero": "unisex",
+    "cores": ["branco", "preto", "dourado"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 55,
+    "tipo": "acessorio",
+    "nome": "Saco Nike Varsity Elite para Sapatilhas",
+    "marca": "Nike",
+    "preco": 29.99,
+    "categoria": "Sacos",
+    "imagens": [
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-0.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-1.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-2.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-3.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-4.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-5.webp",
+      "/img/nike/acessorios/mochilas-sacos/saco-sapatilhas-nike-varsity-elite-black-black-metallic-silver-6.webp"
+    ],
+    "descricao": "Saco Nike Varsity Elite ideal para transportar sapatilhas ou equipamento leve.",
+    "genero": "unisex",
+    "cores": ["preto", "prateado"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 56,
+    "tipo": "acessorio",
+    "nome": "Manguitos Nike Pro Elite 2.0 - Black/White",
+    "marca": "Nike",
+    "preco": 24.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/nike/acessorios/protecoes/maguitos-nike-pro-elite-2.0-black-white-white-0.webp"
+    ],
+    "descricao": "Manguitos Nike Pro Elite 2.0 com compressão e respirabilidade.",
+    "genero": "unisex",
+    "cores": ["preto", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 57,
+    "tipo": "acessorio",
+    "nome": "Manguitos Nike Pro Elite 2.0 - White/Black",
+    "marca": "Nike",
+    "preco": 24.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/nike/acessorios/protecoes/manguitos-nike-pro-elite-2.0-white-black-black-0.webp"
+    ],
+    "descricao": "Manguitos Nike Pro Elite 2.0 brancos com detalhes em preto.",
+    "genero": "unisex",
+    "cores": ["branco", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 58,
+    "tipo": "acessorio",
+    "nome": "Manguitos Nike Shooter 2.0 - Black/White",
+    "marca": "Nike",
+    "preco": 19.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/nike/acessorios/protecoes/manguitos-nike-shooter-2.0-nba-black-white-0.webp"
+    ],
+    "descricao": "Manguitos Nike Shooter 2.0 com compressão leve e conforto térmico.",
+    "genero": "unisex",
+    "cores": ["preto", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 59,
+    "tipo": "acessorio",
+    "nome": "Manguitos Nike Shooter 2.0 - White/Black",
+    "marca": "Nike",
+    "preco": 19.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/nike/acessorios/protecoes/manguitos-nike-shooter-2.0-nba-white-black-0.webp"
+    ],
+    "descricao": "Manguitos Nike Shooter 2.0 brancos com compressão leve.",
+    "genero": "unisex",
+    "cores": ["branco", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 60,
+    "tipo": "acessorio",
+    "nome": "Manguitos Jordan Jumpman - Black/White",
+    "marca": "Jordan",
+    "preco": 24.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/jordan/acessorios/protecoes/jordan-jumpman-2-pack-black-white-0.webp"
+    ],
+    "descricao": "Manguitos Jordan Jumpman com compressão e design clássico.",
+    "genero": "unisex",
+    "cores": ["preto", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 61,
+    "tipo": "acessorio",
+    "nome": "Manguitos Jordan Jumpman - Gym Red/Black",
+    "marca": "Jordan",
+    "preco": 24.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/jordan/acessorios/protecoes/jordan-jumpman-2-pack-gym-red-black-0.webp"
+    ],
+    "descricao": "Manguitos Jordan Jumpman em vermelho e preto, estilo agressivo.",
+    "genero": "unisex",
+    "cores": ["vermelho", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 62,
+    "tipo": "acessorio",
+    "nome": "Manguitos Jordan Jumpman - White/Black",
+    "marca": "Jordan",
+    "preco": 24.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/jordan/acessorios/protecoes/jordan-jumpman-2-pack-white-black-0.webp"
+    ],
+    "descricao": "Manguitos Jordan Jumpman brancos com logo preto.",
+    "genero": "unisex",
+    "cores": ["branco", "preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 63,
+    "tipo": "acessorio",
+    "nome": "Manguitos Jordan Shooter - Black/White",
+    "marca": "Jordan",
+    "preco": 19.99,
+    "categoria": "Proteções",
+    "imagens": [
+      "/img/jordan/acessorios/protecoes/manguitos-jordan-shooter-black-white-0.webp"
+    ],
+    "descricao": "Manguitos Jordan Shooter com compressão leve e conforto térmico.",
+    "genero": "unisex",
+    "cores": ["preto", "branco"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 64,
+    "tipo": "acessorio",
+    "nome": "Mochila Wilson All Sports Ball - Black",
+    "marca": "Wilson",
+    "preco": 49.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-all-sports-ball-black-0.webp"
+    ],
+    "descricao": "Mochila Wilson All Sports Ball com compartimento frontal para bola.",
+    "genero": "unisex",
+    "cores": ["preto"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 65,
+    "tipo": "acessorio",
+    "nome": "Mochila Wilson NBA Authentic Backpack - Black/Gold",
+    "marca": "Wilson",
+    "preco": 69.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-authentic-backpack-black-gold-0.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-authentic-backpack-black-gold-1.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-authentic-backpack-black-gold-2.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-authentic-backpack-black-gold-3.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-authentic-backpack-black-gold-4.webp"
+    ],
+    "descricao": "Mochila Wilson NBA Authentic com detalhes dourados e grande capacidade.",
+    "genero": "unisex",
+    "cores": ["preto", "dourado"],
+    "novidade": false,
+    "promocao": false
+  },
+  {
+    "id": 66,
+    "tipo": "acessorio",
+    "nome": "Mochila Wilson NBA Jam Backpack - Silver/Black/Red",
+    "marca": "Wilson",
+    "preco": 59.99,
+    "categoria": "Mochilas",
+    "imagens": [
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-jam-backpack-silver-black-red-0.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-jam-backpack-silver-black-red-1.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-jam-backpack-silver-black-red-2.webp",
+      "/img/wilson/acessorios/mochilas-sacos/mochila-wilson-nba-jam-backpack-silver-black-red-3.webp"
+    ],
+    "descricao": "Mochila Wilson NBA Jam com design inspirado no clássico videojogo. Espaçosa, resistente e perfeita para transportar equipamento desportivo.",
+    "genero": "unisex",
+    "cores": ["prateado", "preto", "vermelho"],
+    "novidade": false,
+    "promocao": false
   }
 ]
