@@ -1,10 +1,3 @@
-Perfeito 👍
-Aqui está o conteúdo **pronto em Markdown (`README.md`)**.
-Podes **copiar tudo** e colar diretamente num ficheiro chamado `README.md` na raiz do repositório.
-
----
-
-````md
 # 🏀 HOOP — Basketball E-Commerce  
 ### Projeto Académico
 
