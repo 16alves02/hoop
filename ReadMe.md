@@ -188,8 +188,6 @@ npm run dev
 
 ## 📸 Screenshots
 
-*(Adicionar imagens do projeto)*
-
 ```text
 /img/screenshots/home.png
 /img/screenshots/produto.png
