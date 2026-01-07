@@ -7,6 +7,7 @@ Este projeto foi desenvolvido com foco em **experiência de utilizador**, **iden
 > ⚠️ **Nota importante**  
 > Este website é **100% académico**.  
 > Não representa uma loja real, não realiza vendas e não possui qualquer ligação comercial com marcas mencionadas.
+> https://hoop-16alves02.netlify.app
 
 ---
 
