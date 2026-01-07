@@ -188,11 +188,9 @@ npm run dev
 
 ## 📸 Screenshots
 
-```text
-/img/screenshots/home.png
-/img/screenshots/produto.png
-/img/screenshots/carrinho.png
-```
+![Home Screenshot](/img/screenshots/home.png)
+![Produto Screenshot](/img/screenshots/produto.png)
+![Carrinho Screenshot](/img/screenshots/carrinho.png)
 
 ---
 
