@@ -188,9 +188,9 @@ npm run dev
 
 ## 📸 Screenshots
 
-![Home Screenshot](public/img/screenshots/home.png)
-![Produto Screenshot](public/img/screenshots/produto.png)
-![Carrinho Screenshot](public/img/screenshots/carrinho.png)
+![Home Screenshot](public/img/screenshots/home.PNG)
+![Produto Screenshot](public/img/screenshots/produto.PNG)
+![Carrinho Screenshot](public/img/screenshots/carrinho.PNG)
 
 ---
 
