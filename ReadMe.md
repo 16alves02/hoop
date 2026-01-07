@@ -210,11 +210,3 @@ Este projeto utiliza a **Licença MIT**, com a seguinte nota adicional:
 GitHub: [https://github.com/16alves02](https://github.com/16alves02)
 
 Projeto desenvolvido com paixão pelo basquetebol e pela web 🏀💻
-
----
-
-## 🏁 Licença
-
-Este projeto está licenciado sob a **MIT License**.
-
-```
