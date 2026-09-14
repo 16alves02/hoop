@@ -1,4 +1,4 @@
-# 🏀 HOOP — Basketball E-Commerce  
+# 🏀 HOOP - Basketball E-Commerce  
 ### Projeto Académico
 
 Bem-vindo à **HOOP**, uma plataforma fictícia de e-commerce dedicada ao basquetebol.  
@@ -36,7 +36,7 @@ src/
  ├── styles/
  ├── Layout.tsx
  ├── main.tsx
- └── App.tsx (não utilizado — rotas definidas no main)
+ └── App.tsx (não utilizado - rotas definidas no main)
 ````
 
 ### Estrutura
@@ -48,7 +48,7 @@ src/
 
 ---
 
-## 🎨 Design System — HOOP
+## 🎨 Design System - HOOP
 
 A identidade visual segue uma linha **premium**, **escura** e de **alto contraste**, inspirada em arenas de basquetebol.
 
