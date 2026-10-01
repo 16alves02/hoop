@@ -247,7 +247,6 @@ Local storage provides persistence for the client-side simulation.
 - Node.js
 - npm
 
-The repository also contains a product-generation script used to work with the product image catalogue.
 
 ## 🚀 Getting Started
 
