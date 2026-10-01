@@ -97,3 +97,10 @@ npm run build
 **Leonardo Alves - [@16alves02](https://github.com/16alves02)**
 
 HOOP is part of the **16alves02** project portfolio and reflects my work with React, TypeScript and frontend application architecture.
+## 📜 License & Copyright
+
+**Copyright (c) 2026 Leonardo Alves (16alves02). All rights reserved.**
+
+This project is **not open source**. The source code is published for viewing and educational reference, but it may not be copied, redistributed, modified for public or commercial use, sublicensed, sold, or presented as someone else's work without prior written permission.
+
+See the [LICENSE](./LICENSE) file for the full terms.
