@@ -1,186 +1,44 @@
 # 🏀 HOOP
 
-> **Basketball, culture and e-commerce in one digital experience.**
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20HOOP-111111?style=for-the-badge)](https://hoop-16alves02.netlify.app)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=111111)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
+[![React Router](https://img.shields.io/badge/React%20Router-7-CA4245?style=flat-square&logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![React Icons](https://img.shields.io/badge/React%20Icons-5-E91E63?style=flat-square&logo=react&logoColor=white)](https://react-icons.github.io/react-icons/)
+[![Node.js](https://img.shields.io/badge/Node.js-Required-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 [![Copyright](https://img.shields.io/badge/Code-Proprietary-111111?style=flat-square)](LICENSE)
+
+> **Basketball, culture and e-commerce in one digital experience.**
 
 > ⚠️ **Academic project:** HOOP is a fictional e-commerce experience. It does not represent a real store, process real purchases or have a commercial relationship with the brands and products represented in the interface.
 
-## 🌐 Live Demo
+## 🚀 Project Description
 
-**[Open HOOP](https://hoop-16alves02.netlify.app)**
+**HOOP** is a basketball-focused e-commerce web application built to simulate the experience of discovering and purchasing basketball products. It combines a sports-oriented visual identity with a complete client-side shopping flow, from browsing the catalogue and viewing product details to favourites, cart, account screens and a simulated checkout.
 
-## 📌 What Is HOOP?
+The project is designed as a frontend learning experience, with a component-based React architecture, typed product data, reusable UI elements and shared application state. The first versions were developed in **December 2025**, followed by significant development and refinement during **2026**.
 
-**HOOP** is a basketball-focused e-commerce web application built to simulate the experience of browsing, discovering and purchasing basketball products.
+**[Open the live demo](https://hoop-16alves02.netlify.app)**
 
-The project combines a strong sports identity with a complete frontend shopping flow, from the homepage and product discovery to product details, favourites, cart, account screens and a simulated checkout.
+### Main features
 
-The first versions were developed in **December 2025** and the project continued to evolve significantly in **2026**.
+- **Homepage:** rotating hero slides, featured products, promotional content and responsive layout.
+- **Product discovery:** search by product name, player or team, plus filters for type, gender, size, price, brand, team, player, colour, new products and promotions.
+- **Sorting and pagination:** sort by price, name or newest items. Filter state is reflected in the URL.
+- **Product details:** product gallery, descriptions, prices, available sizes, favourites, cart actions and review interfaces.
+- **Favourites:** save products locally and access them later.
+- **Shopping cart:** add and remove items, select sizes, change quantities, calculate totals and clear the cart.
+- **Account screens:** simulated login, registration, profile and local session persistence.
+- **Multi-step checkout:** login, delivery, payment and success screens, with simulated card, MB WAY, Multibanco, PayPal, Apple Pay and Google Pay options.
+- **Supporting pages:** About, Contact, FAQ, Buying Guide, Size Guide, Terms and Conditions, Privacy Policy and legal information.
 
-## 🏀 The Experience
-
-The interface is organised around a basketball-oriented catalogue with products such as:
-
-- Basketball jerseys
-- Basketball shoes
-- Balls
-- Accessories
-- Basketball lifestyle products
-
-The catalogue includes data such as brand, player, team, gender, size, colour, price, description and optional reviews, depending on the product.
-
-The repository contains product imagery organised by brands and categories, together with dedicated hero imagery and screenshots for the interface.
-
-## 🛍️ Store Features
-
-### 🏠 Homepage
-
-The homepage includes:
-
-- Rotating hero slides
-- Calls to action for jerseys, shoes and the full catalogue
-- Featured products
-- A promotional section
-- Responsive presentation
-
-### 🔎 Product Discovery
-
-Users can browse the full collection and search for products using:
-
-- Product name
-- Player
-- Team
-
-The collection page supports filters for:
-
-- Product type
-- Gender
-- Size
-- Price
-- Brand
-- Team
-- Player
-- Colour
-- New products
-- Promotions
-
-Results can also be sorted by:
-
-- Price, ascending
-- Price, descending
-- Name
-- Newest
-
-The product catalogue uses pagination and keeps filter state in the URL.
-
-### 🏷️ Product Details
-
-Individual product pages provide:
-
-- Product gallery
-- Product information
-- Player and team information where available
-- Price
-- Size selection where applicable
-- Favourite action
-- Add to cart
-- Description
-- Product reviews
-- Review submission interface
-
-### ❤️ Favourites
-
-The favourites system allows users to save products and access them later.
-
-Favourite data is persisted locally in the browser.
-
-### 🛒 Shopping Cart
-
-The cart supports:
-
-- Adding products
-- Selecting sizes where applicable
-- Changing quantities
-- Removing products
-- Calculating the cart total
-- Clearing the cart
-
-Cart data is persisted with `localStorage`.
-
-### 👤 Account Experience
-
-HOOP includes simulated account functionality with:
-
-- Login
-- Registration
-- Profile
-- Session persistence
-
-The authentication layer is **local and simulated**. It does not connect to a real authentication provider or backend.
-
-### 💳 Simulated Checkout
-
-The checkout is divided into multiple steps:
-
-```text
-Login
-  ↓
-Delivery
-  ↓
-Payment
-  ↓
-Success
-```
-
-The interface includes simulated options for:
-
-- Card
-- MB WAY
-- Multibanco
-- PayPal
-- Apple Pay
-- Google Pay
-
-The card form includes client-side validation and card-brand detection. Multibanco generates a simulated payment reference.
-
-No real payment is processed.
-
-## 📄 Supporting Pages
-
-The project also includes dedicated pages for:
-
-- About
-- Contact
-- FAQ
-- Buying Guide
-- Size Guide
-- Terms and Conditions
-- Privacy Policy
-- Legal information
-- Login
-- Registration
-- Profile
-
-## 🎨 Visual Identity
-
-HOOP was designed around a premium basketball-store aesthetic:
-
-| Element | Direction |
-| --- | --- |
-| Background | Dark / near-black |
-| Primary accent | HOOP yellow |
-| Cards | Dark grey |
-| Typography | High-contrast light text |
-| Imagery | Basketball-focused product and editorial imagery |
-
-The interface uses a responsive layout and a component-based React architecture to keep the visual system consistent across the application.
+Authentication and checkout are **simulations only**. The application does not use a real authentication provider, backend commerce system or payment processor.
 
 ## 🧱 Architecture
+
+The source code is organised around pages, reusable components, global contexts, product data, styles and routing.
 
 ```text
 src/
@@ -207,85 +65,78 @@ src/
 └── main.tsx
 ```
 
-The application separates:
+React Context is used to share authentication, cart, favourites and toast notification state. Browser `localStorage` persists the simulated user session, cart and favourites between visits.
 
-- Pages
-- Reusable components
-- Global application contexts
-- Product data
-- Styling
-- Routing and layout
+## 🛠️ Tech Stack & Hooks
 
-### State Management
+### Visual tech stack
 
-React Context is used for the main application state:
+The badges at the top identify the main technologies and tooling used by the project.
 
-- Authentication
-- Cart
-- Favourites
-- Toast notifications
+| Technology | Role |
+| --- | --- |
+| React 19 | Component-based user interface |
+| TypeScript 5 | Static typing for application code and product data |
+| Vite 7 | Development server and production build |
+| React Router DOM 7 | Client-side routing and nested pages |
+| React Context API | Shared state for cart, favourites, authentication and notifications |
+| CSS3 | Layout, styling and responsive behaviour |
+| React Icons | Interface icons |
+| Node.js and npm | JavaScript runtime and dependency management |
+| ESLint | Code quality and linting |
 
-Local storage provides persistence for the client-side simulation.
+### React hooks identified in the source
 
-## 🛠️ Tech Stack
+- `useState`: local UI state and shared provider state.
+- `useEffect`: synchronises cart and favourites with `localStorage`.
+- `useContext`: reads shared application contexts.
+- `useNavigate`: programmatic navigation through React Router.
 
-### Core
+The project also uses React Router components such as `BrowserRouter`, `Routes`, `Route`, `Link` and `Outlet`.
 
-- React 19
-- TypeScript
-- Vite
-
-### Application
-
-- React Router DOM
-- React Context API
-- React Icons
-
-### Supporting tools
-
-- ESLint
-- Node.js
-- npm
-
-
-## 🚀 Getting Started
+## 💻 How to Run
 
 ### Requirements
 
 - Node.js
 - npm
 
-### Clone
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/16alves02/hoop.git
 cd hoop
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
 ```
 
-### Development
+### 3. Start the development server
 
 ```bash
 npm run dev
 ```
 
-### Build
+Vite prints the local URL in the terminal. Open that address in your browser.
+
+### Other commands
 
 ```bash
 npm run build
-```
-
-### Preview production build
-
-```bash
 npm run preview
-```
-
-### Lint
-
-```bash
 npm run lint
 ```
+
+- `npm run build` checks TypeScript and creates the production build.
+- `npm run preview` serves the production build locally.
+- `npm run lint` runs ESLint.
+
+## 🎨 Visual Identity
+
+HOOP follows a premium basketball-store aesthetic built around a dark, near-black background, yellow accents, dark-grey cards, high-contrast typography and basketball product imagery. Responsive styling keeps the experience usable across different screen sizes.
 
 ## 📸 Screenshots
 
@@ -301,12 +152,21 @@ npm run lint
 
 ![HOOP Cart](public/img/screenshots/carrinho.PNG)
 
+## 🔮 Future Improvements
+
+- Add automated unit and component tests with Vitest and React Testing Library.
+- Add end-to-end tests for search, filters, cart and checkout flows.
+- Improve accessibility with keyboard-flow checks, consistent focus states and screen-reader testing.
+- Extract repeated business logic into typed custom hooks and strengthen form validation.
+- Add a real backend and secure authentication only if the project moves beyond its academic simulation.
+- Connect checkout to a payment provider in a controlled test environment before considering real transactions.
+- Review image loading, code splitting and route-level lazy loading to improve browser performance.
+
 ## 🗓️ Project History
 
-- **December 2025** - First HOOP Store versions committed.
-- **January 2026** - Major development phase, including routing, TypeScript fixes, project structure and store functionality.
-- **2026** - Continued work on product data, screenshots, documentation and presentation.
-- **2026** - README and copyright information refreshed.
+- **December 2025:** first HOOP Store versions committed.
+- **January 2026:** major development phase, including routing, TypeScript fixes, project structure and store functionality.
+- **2026:** continued work on product data, screenshots, documentation and presentation.
 
 ## 👤 Author
 
