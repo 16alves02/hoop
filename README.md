@@ -134,10 +134,6 @@ npm run lint
 - `npm run preview` serves the production build locally.
 - `npm run lint` runs ESLint.
 
-## 🎨 Visual Identity
-
-HOOP follows a premium basketball-store aesthetic built around a dark, near-black background, yellow accents, dark-grey cards, high-contrast typography and basketball product imagery. Responsive styling keeps the experience usable across different screen sizes.
-
 ## 📸 Screenshots
 
 ### Home
@@ -151,6 +147,10 @@ HOOP follows a premium basketball-store aesthetic built around a dark, near-blac
 ### Cart
 
 ![HOOP Cart](public/img/screenshots/carrinho.PNG)
+
+## 🎨 Visual Identity
+
+HOOP follows a premium basketball-store aesthetic built around a dark, near-black background, yellow accents, dark-grey cards, high-contrast typography and basketball product imagery. Responsive styling keeps the experience usable across different screen sizes.
 
 ## 🔮 Future Improvements
 
