@@ -6,7 +6,7 @@ function CheckoutSucesso() {
   const location = useLocation()
   const totalDaNavegacao = (location.state as { totalPago?: unknown } | null)?.totalPago
 
-  // O pagamento simulada já registou a encomenda antes de limpar o carrinho.
+  // O pagamento simulado já registou a encomenda antes de limpar o carrinho.
   const [totalPago] = useState<number>(() => {
     if (typeof totalDaNavegacao === "number") return totalDaNavegacao
 
