@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useEffect, useContext } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { FaPaypal, FaApplePay, FaGooglePay, FaUser, FaCreditCard } from "react-icons/fa6"
@@ -25,15 +24,12 @@ function CheckoutPagamento() {
   const [telemovel, setTelemovel] = useState("")
 
   // Bandeira do cartão detetada automaticamente
-  const [cardBrand, setCardBrand] = useState<"visa" | "mastercard" | "amex" | null>(null)
 
   // Erros de validação
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   // Referência MB gerada quando o utilizador escolhe multibanco
   const [referenciaMB, setReferenciaMB] = useState<string | null>(null)
-
-  if (!carrinho) return null
 
   const { itens, limparCarrinho } = carrinho
 
@@ -48,6 +44,9 @@ function CheckoutPagamento() {
     if (/^3[47]/.test(cleaned)) return "amex"
     return null
   }
+
+  // A bandeira é derivada diretamente do número introduzido.
+  const cardBrand = detectBrand(cardNumber)
 
   // Algoritmo de Luhn para validar cartões
   const luhnCheck = (number: string): boolean => {
@@ -71,11 +70,6 @@ function CheckoutPagamento() {
 
     return sum % 10 === 0
   }
-
-  // Sempre que o número muda, tento detetar a bandeira
-  useEffect(() => {
-    setCardBrand(detectBrand(cardNumber))
-  }, [cardNumber])
 
   // Máscara do número do cartão
   const formatCardNumber = (value: string) => {
@@ -149,6 +143,37 @@ function CheckoutPagamento() {
     return `Entidade: ${entidade} | Referência: ${referencia} | Valor: €${valor}`
   }
 
+  // Regista a encomenda simulada antes de limpar o carrinho.
+  const registarEncomenda = () => {
+    if (itens.length === 0) return
+
+    const novaEncomenda = {
+      id: "ORD-" + Date.now().toString(36).toUpperCase(),
+      data: new Date().toLocaleDateString("pt-PT"),
+      total,
+      itens: itens.reduce((acc, item) => acc + item.quantidade, 0),
+      status: "confirmada" as const,
+    }
+
+    try {
+      const stored = localStorage.getItem("hoop_encomendas")
+      const parsed: unknown = stored ? JSON.parse(stored) : []
+      const historicoAtual = Array.isArray(parsed) ? parsed : []
+      localStorage.setItem(
+        "hoop_encomendas",
+        JSON.stringify([novaEncomenda, ...historicoAtual].slice(0, 10))
+      )
+    } catch (error) {
+      console.error("Não foi possível guardar o histórico de encomendas.", error)
+    }
+  }
+
+  const concluirCompra = () => {
+    registarEncomenda()
+    limparCarrinho()
+    navigate("/checkout/sucesso", { state: { totalPago: total } })
+  }
+
   // Finalizar pagamento
   const handleFinalizar = () => {
     setErrors({})
@@ -182,16 +207,12 @@ function CheckoutPagamento() {
     // Multibanco gera referência e espera 6s antes de avançar
     if (metodo === "multibanco") {
       setReferenciaMB(generateReferenciaMultibanco())
-      setTimeout(() => {
-        limparCarrinho()
-        navigate("/checkout/sucesso")
-      }, 6000)
+      setTimeout(concluirCompra, 6000)
       return
     }
 
-    // Outros métodos avançam direto
-    limparCarrinho()
-    navigate("/checkout/sucesso")
+    // Os restantes métodos simulados avançam diretamente.
+    concluirCompra()
   }
 
   return (
