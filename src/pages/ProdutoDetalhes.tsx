@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState } from "react"
 import { produtos } from "../data/produtos"
 import type { Produto } from "../data/produtos"
 import { CarrinhoContext } from "../context/CarrinhoContext"
@@ -36,7 +36,19 @@ function ProdutoDetalhes() {
   const [erroTamanho, setErroTamanho] = useState(false)
 
   // Estado das reviews
-  const [reviews, setReviews] = useState<Review[]>([])
+  const [reviewsByProduct, setReviewsByProduct] = useState<Record<number, Review[]>>({})
+  const reviews = produto
+    ? reviewsByProduct[produto.id] ?? produto.reviews ?? []
+    : []
+
+  const atualizarReviews = (updater: (current: Review[]) => Review[]) => {
+    if (!produto) return
+
+    setReviewsByProduct(previous => ({
+      ...previous,
+      [produto.id]: updater(previous[produto.id] ?? produto.reviews ?? []),
+    }))
+  }
   const [novaEstrelas, setNovaEstrelas] = useState(5)
   const [novoComentario, setNovoComentario] = useState("")
   const [nomeReviewer, setNomeReviewer] = useState(auth?.user?.nome || "Anónimo")
@@ -52,13 +64,6 @@ function ProdutoDetalhes() {
 
   // Verifico se já está nos favoritos
   const isFavorito = estaNosFavoritos(produto.id)
-
-  // Carrego reviews iniciais do produto
-  useEffect(() => {
-    if (produto.reviews) {
-      setReviews(produto.reviews)
-    }
-  }, [produto])
 
   // Adicionar ao carrinho
   const handleAdicionar = () => {
@@ -106,7 +111,7 @@ function ProdutoDetalhes() {
     }
 
     // Adiciono a nova review ao topo
-    setReviews(prev => [novaReview, ...prev])
+    atualizarReviews(prev => [novaReview, ...prev])
 
     addToast("Obrigado pela tua avaliação!", "success")
     setNovoComentario("")
