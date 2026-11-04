@@ -28,6 +28,24 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Report dependency advisories
+        run: |
+          npm audit --json > /tmp/hoop-npm-audit.json || true
+          node - <<'NODE'
+          const fs = require("node:fs");
+          const report = JSON.parse(fs.readFileSync("/tmp/hoop-npm-audit.json", "utf8"));
+          console.log("Dependency vulnerability totals:", JSON.stringify(report.metadata?.vulnerabilities ?? {}));
+          for (const [name, advisory] of Object.entries(report.vulnerabilities ?? {})) {
+            console.log(JSON.stringify({
+              package: name,
+              severity: advisory.severity,
+              direct: advisory.isDirect,
+              affectedRange: advisory.range,
+              fixAvailable: advisory.fixAvailable
+            }));
+          }
+          NODE
+
       - name: Run ESLint
         run: npm run lint
       - name: Build and type-check
