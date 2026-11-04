@@ -6,6 +6,19 @@ import "../styles/Produtos.css"
 
 const ITENS_POR_PAGINA = 20
 
+const tiposDisponiveis = ["todos", "camisola", "sapatilha", "bola", "acessorio"]
+const generosDisponiveis = ["homem", "mulher", "criança"]
+const tamanhosDisponiveis = [
+  "S", "M", "L", "XL", "XXL", "XXXL",
+  "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47"
+]
+const intervalosPreco = [
+  { value: "0-50", label: "Até 50€" },
+  { value: "50-100", label: "50€ - 100€" },
+  { value: "100-200", label: "100€ - 200€" },
+  { value: "200+", label: "Mais de 200€" }
+]
+
 function Produtos() {
   // searchParams controla todos os filtros via URL
   const [searchParams, setSearchParams] = useSearchParams()
@@ -37,27 +50,16 @@ function Produtos() {
   const toggleSeccao = (seccao: string) => {
     setSeccoesAbertas(prev => {
       const novo = new Set(prev)
-      novo.has(seccao) ? novo.delete(seccao) : novo.add(seccao)
+      if (novo.has(seccao)) {
+        novo.delete(seccao)
+      } else {
+        novo.add(seccao)
+      }
       return novo
     })
   }
 
   /* LISTAS DISPONÍVEIS */
-
-  const tiposDisponiveis = ["todos", "camisola", "sapatilha", "bola", "acessorio"]
-  const generosDisponiveis = ["homem", "mulher", "criança"]
-
-  const tamanhosDisponiveis = [
-    "S", "M", "L", "XL", "XXL", "XXXL",
-    "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47"
-  ]
-
-  const intervalosPreco = [
-    { value: "0-50", label: "Até 50€" },
-    { value: "50-100", label: "50€ - 100€" },
-    { value: "100-200", label: "100€ - 200€" },
-    { value: "200+", label: "Mais de 200€" }
-  ]
 
   const marcasUnicas = useMemo(
     () => ["todos", ...Array.from(new Set(produtos.map(p => p.marca).filter((m): m is string => !!m)))],
@@ -99,7 +101,7 @@ function Produtos() {
       equipas: Object.fromEntries(equipasUnicas.filter(e => e !== "todos").map(e => [e, contar("equipa", e)])),
       jogadores: Object.fromEntries(jogadoresUnicos.filter(j => j !== "todos").map(j => [j, contar("jogador", j)])),
     }
-  }, [])
+  }, [tiposDisponiveis, marcasUnicas, equipasUnicas, jogadoresUnicos])
 
   /* HELPERS DE URL */
 
