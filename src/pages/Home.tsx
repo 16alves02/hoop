@@ -3,16 +3,8 @@ import { useState, useEffect } from "react"
 import "../styles/Home.css"
 import { produtos } from "../data/produtos"
 
-function Home() {
-  // Índice do slide atual do hero
-  const [heroIndex, setHeroIndex] = useState(0)
-
-  // Guarda as imagens já carregadas ou fallback
-  const [loadedImages, setLoadedImages] = useState<Record<number, string>>({})
-
-  // Slides principais do hero
-  // Cada um tem título, subtítulo, CTA e imagem
-  const heroSlides = [
+// Slides principais do hero; mantidos fora do componente para estabilidade.
+const heroSlides = [
     {
       titulo: "Camisolas Icónicas da NBA",
       subtitulo: "Revive as lendas do basquetebol com autenticidade",
@@ -35,6 +27,13 @@ function Home() {
       imagem: "/img/hero-geral.png"
     }
   ]
+
+function Home() {
+  // Índice do slide atual do hero
+  const [heroIndex, setHeroIndex] = useState(0)
+
+  // Guarda as imagens já carregadas ou fallback
+  const [loadedImages, setLoadedImages] = useState<Record<number, string>>({})
 
   // Slider automático - troca de slide a cada 10s
   useEffect(() => {
@@ -67,7 +66,7 @@ function Home() {
     })
 
     void Promise.all(loaders)
-  }, [])
+  }, [heroSlides])
 
   // Produtos em destaque - escolho os mais caros para dar um ar premium
   const destaqueProdutos = [...produtos]
