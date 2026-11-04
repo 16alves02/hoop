@@ -101,7 +101,7 @@ function Produtos() {
       equipas: Object.fromEntries(equipasUnicas.filter(e => e !== "todos").map(e => [e, contar("equipa", e)])),
       jogadores: Object.fromEntries(jogadoresUnicos.filter(j => j !== "todos").map(j => [j, contar("jogador", j)])),
     }
-  }, [tiposDisponiveis, marcasUnicas, equipasUnicas, jogadoresUnicos])
+  }, [marcasUnicas, equipasUnicas, jogadoresUnicos])
 
   /* HELPERS DE URL */
 
