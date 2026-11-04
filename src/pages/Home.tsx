@@ -41,7 +41,7 @@ function Home() {
       setHeroIndex(prev => (prev + 1) % heroSlides.length)
     }, 10000)
     return () => clearInterval(interval)
-  }, [heroSlides.length])
+  }, [])
 
   // Pré-carrega imagens e aplica fallback se falharem
   useEffect(() => {
@@ -66,7 +66,7 @@ function Home() {
     })
 
     void Promise.all(loaders)
-  }, [heroSlides])
+  }, [])
 
   // Produtos em destaque - escolho os mais caros para dar um ar premium
   const destaqueProdutos = [...produtos]
