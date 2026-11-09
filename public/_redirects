@@ -1,0 +1,25 @@
+# Preserve the React Router entry points while allowing Cloudflare Pages
+# to serve the root 404.html with an actual HTTP 404 for unknown paths.
+# Exact routes
+/produtos /index.html 200
+/carrinho /index.html 200
+/favoritos /index.html 200
+/contacto /index.html 200
+/sobre /index.html 200
+/legal /index.html 200
+/guia-de-compra /index.html 200
+/guia-de-tamanhos /index.html 200
+/faq /index.html 200
+/privacidade /index.html 200
+/termos /index.html 200
+/perfil /index.html 200
+/login /index.html 200
+/signup /index.html 200
+/checkout /index.html 200
+/checkout/login /index.html 200
+/checkout/entrega /index.html 200
+/checkout/pagamento /index.html 200
+/checkout/sucesso /index.html 200
+# Parameterised routes
+/produto/* /index.html 200
+/pesquisa/* /index.html 200
