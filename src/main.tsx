@@ -25,6 +25,7 @@ import Perfil from "./pages/Perfil"
 import Legal from "./pages/Legal"
 import GuiaDeCompra from "./pages/GuiaDeCompra"
 import GuiaDeTamanhos from "./pages/GuiaDeTamanhos"
+import NotFound from "./pages/NotFound"
 
 // Providers globais (estado global da app)
 import { CarrinhoProvider } from "./context/CarrinhoContext"
@@ -106,6 +107,8 @@ createRoot(document.getElementById("root")!).render(
                   <Route path="sucesso" element={<CheckoutSucesso />} />
                 </Route>
 
+                {/* Catch-all: keep the custom 404 inside the shared storefront layout. */}
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
 
