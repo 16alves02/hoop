@@ -318,7 +318,7 @@ function CheckoutPagamento() {
 
           {/* Botão final */}
           <button className="checkout-btn large" onClick={handleFinalizar}>
-            "Concluir simulação"
+            Concluir simulação
           </button>
         </div>
 
@@ -344,7 +344,7 @@ function CheckoutPagamento() {
           </div>
 
           <div className="resumo-total">
-            <span>Total a pagar</span>
+            <span>Total da simulação</span>
             <strong>€{total.toFixed(2)}</strong>
           </div>
         </div>
