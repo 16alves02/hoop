@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="A página que procuras não existe na HOOP Store. Regressa à loja e continua a explorar a coleção.">
+  <title>Página não encontrada | HOOP</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --gold: #f2b01e;
+      --ink: #0d0d0d;
+      --panel: #141414;
+      --text: #fff;
+      --muted: #bcbcbc;
+      --line: #303030;
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; background: var(--ink); }
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      padding: clamp(18px, 5vw, 60px);
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 80% 0%, rgb(242 176 30 / 12%), transparent 34rem),
+        var(--ink);
+      font: 16px/1.65 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 820px);
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 60px);
+      border: 1px solid rgb(242 176 30 / 32%);
+      border-radius: 14px;
+      background: linear-gradient(115deg, rgb(242 176 30 / 8%), transparent 48%), var(--panel);
+      box-shadow: 0 24px 60px rgb(0 0 0 / 40%);
+    }
+    main::after {
+      position: absolute;
+      z-index: -1;
+      right: -.04em;
+      bottom: -.22em;
+      color: rgb(242 176 30 / 5%);
+      content: "HOOP";
+      font-size: clamp(8rem, 26vw, 18rem);
+      font-weight: 900;
+      line-height: .85;
+      letter-spacing: -.1em;
+      pointer-events: none;
+    }
+    .brand {
+      margin: 0;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .code {
+      margin: 26px 0 12px;
+      color: var(--gold);
+      font-size: clamp(5rem, 19vw, 9rem);
+      font-weight: 900;
+      line-height: .8;
+      letter-spacing: -.1em;
+    }
+    .eyebrow {
+      margin: 22px 0 8px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 15ch;
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.02;
+      letter-spacing: -.06em;
+    }
+    .message { max-width: 50ch; margin: 16px 0 0; color: var(--muted); }
+    nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    a {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 17px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .18s ease, background-color .18s ease;
+    }
+    a.secondary { color: var(--text); background: transparent; border-color: var(--line); }
+    a:hover { transform: translateY(-2px); color: var(--ink); background: #fff; border-color: #fff; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    @media (max-width: 480px) { nav a { width: 100%; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">HOOP / Basketball Culture Store</p>
+    <p class="code" aria-hidden="true">404</p>
+    <p class="eyebrow">Página não encontrada / Fora de jogo</p>
+    <h1>Este endereço ficou fora de jogo.</h1>
+    <p class="message">A página pode ter sido movida ou o endereço pode estar incorreto. Regressa à loja para continuares a explorar a coleção HOOP.</p>
+    <nav aria-label="Opções de navegação">
+      <a href="/">Voltar à loja</a>
+      <a class="secondary" href="/produtos">Explorar produtos</a>
+    </nav>
+  </main>
+</body>
+</html>
