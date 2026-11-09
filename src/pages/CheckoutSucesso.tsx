@@ -25,11 +25,11 @@ function CheckoutSucesso() {
 
   return (
     <div className="checkout-page checkout-sucesso">
-      <h1>Encomenda Confirmada!</h1>
-      <p>Obrigado pela tua compra. Vais receber um email em breve</p>
+      <h1>Simulação concluída</h1>
+      <p>Esta foi apenas uma demonstração académica. Não foi realizada qualquer compra, pagamento ou envio de email.</p>
 
       <p style={{ fontSize: "1.2rem", margin: "1.5rem 0" }}>
-        Total pago: <strong>€{totalPago.toFixed(2)}</strong>
+        Total apresentado na simulação: <strong>€{totalPago.toFixed(2)}</strong>
       </p>
 
       <button

@@ -28,9 +28,6 @@ function CheckoutPagamento() {
   // Erros de validação
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  // Referência MB gerada quando o utilizador escolhe multibanco
-  const [referenciaMB, setReferenciaMB] = useState<string | null>(null)
-
   const { itens, limparCarrinho } = carrinho
 
   // Total da compra
@@ -135,14 +132,6 @@ function CheckoutPagamento() {
     return {}
   }
 
-  // Gera referência Multibanco fake
-  const generateReferenciaMultibanco = () => {
-    const entidade = "12345"
-    const referencia = Math.floor(100000000 + Math.random() * 900000000)
-    const valor = total.toFixed(2)
-    return `Entidade: ${entidade} | Referência: ${referencia} | Valor: €${valor}`
-  }
-
   // Regista a encomenda simulada antes de limpar o carrinho.
   const registarEncomenda = () => {
     if (itens.length === 0) return
@@ -152,7 +141,7 @@ function CheckoutPagamento() {
       data: new Date().toLocaleDateString("pt-PT"),
       total,
       itens: itens.reduce((acc, item) => acc + item.quantidade, 0),
-      status: "confirmada" as const,
+      status: "simulada" as const,
     }
 
     try {
@@ -177,7 +166,6 @@ function CheckoutPagamento() {
   // Finalizar pagamento
   const handleFinalizar = () => {
     setErrors({})
-    setReferenciaMB(null)
 
     if (!metodo) {
       alert("Escolhe um método de pagamento")
@@ -204,13 +192,6 @@ function CheckoutPagamento() {
 
     if (hasError) return
 
-    // Multibanco gera referência e espera 6s antes de avançar
-    if (metodo === "multibanco") {
-      setReferenciaMB(generateReferenciaMultibanco())
-      setTimeout(concluirCompra, 6000)
-      return
-    }
-
     // Os restantes métodos simulados avançam diretamente.
     concluirCompra()
   }
@@ -230,7 +211,8 @@ function CheckoutPagamento() {
 
         {/* Coluna esquerda */}
         <div className="checkout-form-left">
-          <h2>Método de Pagamento</h2>
+          <h2>Método de Pagamento — demonstração</h2>
+          <p role="note">Projeto académico: nenhum pagamento é processado. Não introduzas dados reais de cartão ou de pagamento.</p>
 
           {/* Botões dos métodos */}
           <div className="checkout-pagamento-metodos">
@@ -323,27 +305,20 @@ function CheckoutPagamento() {
             </div>
           )}
 
-          {/* Multibanco */}
-          {metodo === "multibanco" && referenciaMB && (
-            <div className="multibanco-referencia">
-              <h3>Referência Multibanco</h3>
-              <p>{referenciaMB}</p>
-              <small>Paga até 48h em qualquer Multibanco ou homebanking</small>
-            </div>
+          {metodo === "multibanco" && (
+            <p role="note">O Multibanco é apenas uma opção ilustrativa. Esta demonstração não emite referências nem recebe pagamentos.</p>
           )}
 
           {/* Métodos externos */}
           {["paypal", "apple", "google"].includes(metodo || "") && (
             <p className="redirect-info">
-              Serás redirecionado para <strong>{metodo?.toUpperCase()}</strong> para concluir o pagamento
+              <strong>{metodo?.toUpperCase()}</strong> é apresentado apenas para fins demonstrativos. Não existe redirecionamento nem cobrança.
             </p>
           )}
 
           {/* Botão final */}
           <button className="checkout-btn large" onClick={handleFinalizar}>
-            {metodo === "multibanco" && !referenciaMB
-              ? "Gerar Referência e Pagar"
-              : "Confirmar Pagamento"}
+            Concluir simulação
           </button>
         </div>
 
@@ -369,7 +344,7 @@ function CheckoutPagamento() {
           </div>
 
           <div className="resumo-total">
-            <span>Total a pagar</span>
+            <span>Total da simulação</span>
             <strong>€{total.toFixed(2)}</strong>
           </div>
         </div>
