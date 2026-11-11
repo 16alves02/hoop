@@ -17,7 +17,10 @@ export function isCheckoutDelivery(value: unknown): value is CheckoutDelivery {
 
   const delivery = value as Record<string, unknown>
   return ["nome", "email", "morada", "cidade", "codigoPostal", "telefone"]
-    .every((key) => typeof delivery[key] === "string" && delivery[key].trim().length > 0)
+    .every((key) => {
+      const field = delivery[key]
+      return typeof field === "string" && field.trim().length > 0
+    })
 }
 
 export function isCheckoutSuccessState(value: unknown): value is CheckoutSuccessState {
