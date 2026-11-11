@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:produtos": "node scripts/generateProductsFromImages.cjs"
+    "generate:produtos": "node scripts/generateProductsFromImages.cjs",
+    "test": "node --experimental-strip-types --test"
   },
   "dependencies": {
     "cors": "^2.8.5",
