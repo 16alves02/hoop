@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { Navigate, useLocation, useNavigate } from "react-router-dom"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { FaPaypal, FaApplePay, FaGooglePay, FaUser, FaCreditCard } from "react-icons/fa6"
 import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
@@ -32,6 +32,10 @@ function CheckoutPagamento() {
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const { itens, limparCarrinho } = carrinho
+
+  // O pagamento só pode ser aberto depois de validar os dados de entrega.
+  if (itens.length === 0) return <Navigate to="/carrinho" replace />
+  if (!entrega) return <Navigate to="/checkout/entrega" replace />
 
   // Total da compra
   const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
