@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContextValue"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { FaUser, FaCreditCard } from "react-icons/fa6"
@@ -39,6 +39,8 @@ function CheckoutEntrega() {
   if (!auth?.user || !carrinho) return null
 
   const { itens } = carrinho
+  if (itens.length === 0) return <Navigate to="/carrinho" replace />
+
   const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
 
   // Atualiza o estado do formulário e marca o campo como touched
