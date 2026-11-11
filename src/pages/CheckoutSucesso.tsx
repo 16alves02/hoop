@@ -1,29 +1,16 @@
-import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { Navigate, useLocation } from "react-router-dom"
 import "../styles/Checkout.css"
 
 function CheckoutSucesso() {
   const location = useLocation()
   const checkoutState = location.state as { totalPago?: unknown; entrega?: { nome: string; email: string; morada: string; cidade: string; codigoPostal: string; telefone: string } } | null
-  const totalDaNavegacao = checkoutState?.totalPago
+  const totalPago = checkoutState?.totalPago
   const entrega = checkoutState?.entrega
 
-  // O pagamento simulado já registou a encomenda antes de limpar o carrinho.
-  const [totalPago] = useState<number>(() => {
-    if (typeof totalDaNavegacao === "number") return totalDaNavegacao
-
-    try {
-      const stored = localStorage.getItem("hoop_encomendas")
-      const historico: unknown = stored ? JSON.parse(stored) : []
-      if (Array.isArray(historico) && typeof historico[0]?.total === "number") {
-        return historico[0].total
-      }
-    } catch (error) {
-      console.warn("Não foi possível ler o histórico de encomendas.", error)
-    }
-
-    return 0
-  })
+  // A página de sucesso só é válida após a conclusão desta navegação.
+  if (typeof totalPago !== "number" || !Number.isFinite(totalPago) || totalPago < 0 || !entrega) {
+    return <Navigate to="/carrinho" replace />
+  }
 
   return (
     <div className="checkout-page checkout-sucesso">
