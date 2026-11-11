@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { FaPaypal, FaApplePay, FaGooglePay, FaUser, FaCreditCard } from "react-icons/fa6"
 import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
@@ -9,6 +9,8 @@ import { validarNumeroCartaoLuhn, validarValidadeCartao, validarTelemovelPortugu
 
 function CheckoutPagamento() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const entrega = (location.state as { entrega?: { nome: string; email: string; morada: string; cidade: string; codigoPostal: string; telefone: string } } | null)?.entrega
 
   // Puxo o carrinho para saber os itens e limpar no final
   const carrinho = useContext(CarrinhoContext)
@@ -125,7 +127,7 @@ function CheckoutPagamento() {
   const concluirCompra = () => {
     registarEncomenda()
     limparCarrinho()
-    navigate("/checkout/sucesso", { state: { totalPago: total } })
+    navigate("/checkout/sucesso", { state: { totalPago: total, entrega } })
   }
 
   // Finalizar pagamento
