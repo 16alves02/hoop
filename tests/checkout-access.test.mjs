@@ -1,6 +1,7 @@
 import test from "node:test"
 import assert from "node:assert/strict"
 import {
+  getOrderHistoryStorageKey,
   isCheckoutDelivery,
   isCheckoutSuccessState,
 } from "../src/context/checkoutAccess.ts"
@@ -37,4 +38,15 @@ test("rejeita acesso direto, totais inválidos e dados de entrega incompletos", 
   assert.equal(isCheckoutSuccessState({ totalPago: Infinity, entrega }), false)
   assert.equal(isCheckoutSuccessState({ totalPago: -1, entrega }), false)
   assert.equal(isCheckoutSuccessState({ totalPago: 42.5, entrega: {} }), false)
+})
+
+test("isola o histórico por conta e normaliza o email", () => {
+  assert.equal(
+    getOrderHistoryStorageKey(" Pessoa@Example.com "),
+    "hoop_encomendas:pessoa@example.com",
+  )
+  assert.notEqual(
+    getOrderHistoryStorageKey("pessoa-a@example.com"),
+    getOrderHistoryStorageKey("pessoa-b@example.com"),
+  )
 })
