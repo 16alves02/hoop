@@ -6,6 +6,7 @@ import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
 import { MdAtm } from "react-icons/md"
 import "../styles/Checkout.css"
 import { validarNumeroCartaoLuhn, validarValidadeCartao, validarTelemovelPortugues } from "../context/checkoutValidation"
+import { isCheckoutDelivery } from "../context/checkoutAccess"
 
 function CheckoutPagamento() {
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ function CheckoutPagamento() {
 
   // O pagamento só pode ser aberto depois de validar os dados de entrega.
   if (itens.length === 0) return <Navigate to="/carrinho" replace />
-  if (!entrega) return <Navigate to="/checkout/entrega" replace />
+  if (!isCheckoutDelivery(entrega)) return <Navigate to="/checkout/entrega" replace />
 
   // Total da compra
   const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
