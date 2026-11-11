@@ -6,7 +6,7 @@ import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
 import { MdAtm } from "react-icons/md"
 import "../styles/Checkout.css"
 import { validarNumeroCartaoLuhn, validarValidadeCartao, validarTelemovelPortugues } from "../context/checkoutValidation"
-import { isCheckoutDelivery } from "../context/checkoutAccess"
+import { getOrderHistoryStorageKey, isCheckoutDelivery } from "../context/checkoutAccess"
 
 function CheckoutPagamento() {
   const navigate = useNavigate()
@@ -117,11 +117,11 @@ function CheckoutPagamento() {
     }
 
     try {
-      const stored = localStorage.getItem("hoop_encomendas")
+      const stored = localStorage.getItem(getOrderHistoryStorageKey(entrega.email))
       const parsed: unknown = stored ? JSON.parse(stored) : []
       const historicoAtual = Array.isArray(parsed) ? parsed : []
       localStorage.setItem(
-        "hoop_encomendas",
+        getOrderHistoryStorageKey(entrega.email),
         JSON.stringify([novaEncomenda, ...historicoAtual].slice(0, 10))
       )
     } catch (error) {
