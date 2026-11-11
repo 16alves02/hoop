@@ -1,16 +1,17 @@
 import { Navigate, useLocation } from "react-router-dom"
 import "../styles/Checkout.css"
+import { isCheckoutSuccessState } from "../context/checkoutAccess"
 
 function CheckoutSucesso() {
   const location = useLocation()
-  const checkoutState = location.state as { totalPago?: unknown; entrega?: { nome: string; email: string; morada: string; cidade: string; codigoPostal: string; telefone: string } } | null
-  const totalPago = checkoutState?.totalPago
-  const entrega = checkoutState?.entrega
+  const checkoutState: unknown = location.state
 
-  // A página de sucesso só é válida após a conclusão desta navegação.
-  if (typeof totalPago !== "number" || !Number.isFinite(totalPago) || totalPago < 0 || !entrega) {
+  // A página de sucesso só é válida após uma navegação com dados completos.
+  if (!isCheckoutSuccessState(checkoutState)) {
     return <Navigate to="/carrinho" replace />
   }
+
+  const { totalPago, entrega } = checkoutState
 
   return (
     <div className="checkout-page checkout-sucesso">
