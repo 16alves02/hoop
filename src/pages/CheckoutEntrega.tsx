@@ -105,8 +105,8 @@ function CheckoutEntrega() {
       return
     }
 
-    // Se tudo estiver válido, avanço para a página de pagamento
-    navigate("/checkout/pagamento")
+    // Transporta os dados apenas durante este checkout; não os guarda no localStorage.
+    navigate("/checkout/pagamento", { state: { entrega: form } })
   }
 
   // Formata automaticamente o código postal enquanto o utilizador escreve
