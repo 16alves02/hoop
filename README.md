@@ -42,7 +42,9 @@ src/
 ├── context/
 │   ├── AuthContext
 │   ├── CarrinhoContext
+│   ├── carrinhoLogic
 │   ├── FavoritosContext
+│   ├── favoritosLogic
 │   └── ToastContext
 ├── data/
 │   ├── produtos.json
@@ -61,7 +63,7 @@ src/
 └── main.tsx
 ```
 
-React Context shares the cart, favourites, authentication and toast-notification state across the application. The simulated session, cart and favourites are saved in browser `localStorage` between visits.
+React Context shares the cart, favourites, authentication and toast-notification state across the application. Cart and favourites operations are isolated as pure TypeScript functions and covered by unit tests. The simulated session, cart and favourites are saved in browser `localStorage` between visits. Cart variants are identified by product and size, so changing or removing one size does not affect another.
 
 ## Technology stack
 
@@ -96,11 +98,13 @@ Vite prints the local development URL in the terminal.
 npm run build
 npm run preview
 npm run lint
+npm test
 ```
 
 - `npm run build` creates a production build.
 - `npm run preview` serves the production build locally.
 - `npm run lint` runs ESLint.
+- `npm test` runs the cart and favourites business-logic unit tests using Node.js's built-in test runner.
 
 ## Screenshots
 
@@ -122,7 +126,7 @@ HOOP uses a premium basketball-store aesthetic with a near-black background, yel
 
 ## Future improvements
 
-- Add automated unit and component tests with Vitest and React Testing Library.
+- Add component and end-to-end tests for search, filters, cart and checkout.
 - Add end-to-end tests for search, filters, cart and checkout.
 - Review accessibility, including keyboard navigation, focus states and screen-reader support.
 - Extract repeated logic into typed custom hooks and strengthen form validation.
