@@ -5,6 +5,7 @@ import { FaPaypal, FaApplePay, FaGooglePay, FaUser, FaCreditCard } from "react-i
 import { FaMobileAlt, FaHome, FaCheckCircle } from "react-icons/fa"
 import { MdAtm } from "react-icons/md"
 import "../styles/Checkout.css"
+import { validarNumeroCartaoLuhn, validarValidadeCartao, validarTelemovelPortugues } from "../context/checkoutValidation"
 
 function CheckoutPagamento() {
   const navigate = useNavigate()
@@ -45,29 +46,6 @@ function CheckoutPagamento() {
   // A bandeira é derivada diretamente do número introduzido.
   const cardBrand = detectBrand(cardNumber)
 
-  // Algoritmo de Luhn para validar cartões
-  const luhnCheck = (number: string): boolean => {
-    const digits = number.replace(/\D/g, "").split("").map(Number)
-    if (digits.length < 13) return false
-
-    let sum = 0
-    let isEven = false
-
-    for (let i = digits.length - 1; i >= 0; i--) {
-      let digit = digits[i]
-
-      if (isEven) {
-        digit *= 2
-        if (digit > 9) digit -= 9
-      }
-
-      sum += digit
-      isEven = !isEven
-    }
-
-    return sum % 10 === 0
-  }
-
   // Máscara do número do cartão
   const formatCardNumber = (value: string) => {
     const digits = value.replace(/\D/g, "")
@@ -95,25 +73,12 @@ function CheckoutPagamento() {
     const cleanedNumber = cardNumber.replace(/\s/g, "")
     if (cleanedNumber.length < 15) {
       newErrors.card = "Número de cartão incompleto"
-    } else if (!luhnCheck(cleanedNumber)) {
+    } else if (!validarNumeroCartaoLuhn(cleanedNumber)) {
       newErrors.card = "Número de cartão inválido"
     }
 
-    const [monthStr, yearStr] = expiry.split("/")
-    if (!monthStr || !yearStr) {
-      newErrors.expiry = "Data inválida"
-    } else {
-      const month = parseInt(monthStr, 10)
-      const year = parseInt(`20${yearStr}`, 10)
-
-      if (month < 1 || month > 12) {
-        newErrors.expiry = "Mês inválido"
-      } else {
-        const expiryDate = new Date(year, month - 1)
-        if (expiryDate < new Date()) {
-          newErrors.expiry = "Cartão expirado"
-        }
-      }
+    if (!validarValidadeCartao(expiry)) {
+      newErrors.expiry = "Data inválida ou cartão expirado"
     }
 
     const requiredCvv = cardBrand === "amex" ? 4 : 3
@@ -126,7 +91,7 @@ function CheckoutPagamento() {
 
   // Validação MBWay
   const validateMBWay = (): Record<string, string> => {
-    if (!/^9\d{8}$/.test(telemovel)) {
+    if (!validarTelemovelPortugues(telemovel)) {
       return { telemovel: "Telemóvel inválido (deve começar por 9 e ter 9 dígitos)" }
     }
     return {}
@@ -324,11 +289,11 @@ function CheckoutPagamento() {
 
         {/* Coluna direita - resumo */}
         <div className="checkout-resumo">
-          <h3>Resumo da Encomenda ({itens.length} itens)</h3>
+          <h3>Resumo da Encomenda ({itens.reduce((acc, item) => acc + item.quantidade, 0)} itens)</h3>
 
           <div className="resumo-itens">
             {itens.map(item => (
-              <div key={item.id} className="resumo-item">
+              <div key={`${item.id}-${item.tamanho ?? "sem-tamanho"}`} className="resumo-item">
                 <div className="resumo-item-info">
                   <img src={item.imagens[0]} alt={item.nome} className="resumo-img" />
                   <div>
