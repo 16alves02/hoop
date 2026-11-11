@@ -232,11 +232,11 @@ function CheckoutEntrega() {
 
         {/* Coluna direita – resumo da encomenda */}
         <div className="checkout-resumo">
-          <h3>Resumo da Encomenda ({itens.length} itens)</h3>
+          <h3>Resumo da Encomenda ({itens.reduce((acc, item) => acc + item.quantidade, 0)} itens)</h3>
 
           <div className="resumo-itens">
             {itens.map(item => (
-              <div key={item.id} className="resumo-item">
+              <div key={`${item.id}-${item.tamanho ?? "sem-tamanho"}`} className="resumo-item">
                 <div className="resumo-item-info">
                   <img src={item.imagens[0]} alt={item.nome} className="resumo-img" />
                   <div>
