@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContextValue"
 import { ToastContext } from "../context/ToastContext"
+import { getOrderHistoryStorageKey } from "../context/checkoutAccess"
 import "../styles/Checkout.css"
 
 interface EncomendaHistorico {
@@ -9,7 +10,7 @@ interface EncomendaHistorico {
   data: string
   total: number
   itens: number
-  status: "confirmada" | "enviada" | "entregue"
+  status: "simulada" | "confirmada" | "enviada" | "entregue"
 }
 
 function Perfil() {
@@ -33,7 +34,7 @@ function Perfil() {
   // Aqui simulo o backend
   const historico: EncomendaHistorico[] = (() => {
     try {
-      const stored = localStorage.getItem("hoop_encomendas")
+      const stored = localStorage.getItem(getOrderHistoryStorageKey(user.email))
       return stored ? JSON.parse(stored) : []
     } catch {
       return []
