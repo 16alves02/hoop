@@ -46,6 +46,8 @@ jobs:
           }
           NODE
 
+      - name: Run business-logic tests
+        run: npm test
       - name: Run ESLint
         run: npm run lint
       - name: Build and type-check
