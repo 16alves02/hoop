@@ -12,6 +12,10 @@ export interface CheckoutSuccessState {
   entrega: CheckoutDelivery
 }
 
+export function getOrderHistoryStorageKey(email: string): string {
+  return `hoop_encomendas:${email.trim().toLowerCase()}`
+}
+
 export function isCheckoutDelivery(value: unknown): value is CheckoutDelivery {
   if (typeof value !== "object" || value === null) return false
 
