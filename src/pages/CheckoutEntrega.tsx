@@ -35,8 +35,9 @@ function CheckoutEntrega() {
   const [errors, setErrors] = useState<FormErrors>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
 
-  // Se não houver user ou carrinho, não mostro nada
-  if (!auth?.user || !carrinho) return null
+  // Sem sessão, regressa ao login; sem contexto de carrinho, regressa ao carrinho.
+  if (!auth?.user) return <Navigate to="/checkout/login" replace />
+  if (!carrinho) return <Navigate to="/carrinho" replace />
 
   const { itens } = carrinho
   if (itens.length === 0) return <Navigate to="/carrinho" replace />
